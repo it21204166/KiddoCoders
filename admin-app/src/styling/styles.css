@@ -1,0 +1,94 @@
+*{
+    font-family:  sans-serif,Verdana, Geneva, Tahoma;
+}
+.register {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+  }
+
+  form button,
+  form input{
+    width: 20vw;
+    height: 5vh;
+    border-radius: 5px;
+    font-size: 2vh;
+    font-weight: bold;
+    border:2px solid rgba(0, 0, 0, 0.5);
+  }
+
+  form button, 
+  .user button{
+    margin-top: 4vh;
+    font-weight: bold !important;
+    border-color: orange;
+    background-color: #ffa500;
+    color: #ffffff;
+  }
+  
+  form input{
+    padding-left: 1vw;
+    margin-top: 3vh;
+    line-height: 2vh;
+  }
+  form input::placeholder{
+    text-align: left;
+    opacity: 0.5;
+  }
+  form input:focus,
+  form input::placeholder{
+    color: orange;
+  }
+  
+  form{
+    border-width: 1px;
+    border-style: double;
+    border-radius: 30px;
+    border-color: orange;
+    height: 40vh;
+    width: 25vw;
+    padding-top:3vh;
+    background: #006699;
+  }
+
+  form .header{
+    color: orange;
+  }
+  
+  .register{
+    margin-left: 20vw !important;
+  }
+  .register div{
+    display: inline-block;
+
+  }
+  .register  .user{
+    font-size: 18px;
+    font-family: inherit;
+    padding-left: 10vw;
+ 
+  }
+  .user{
+    width: 50vw;
+    font-size: 12px !important;
+    text-align: left;
+    font-family: inherit;
+  }
+
+  .user button{
+    width: 10vw;
+    margin: 1vw;
+    border-radius: 18px;
+  }
+  .user span{
+    display: inline-table;
+    border-spacing: 5px;
+  }
+
+  form button:hover{
+    font-weight: bolder;
+    font-size: 20px;
+    border-color: white;
+    box-shadow: inset 0px -2px 1px rgba(0,0,0,0.8),
+    inset 0 2px 1px orange;
+  }
