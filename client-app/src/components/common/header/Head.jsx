@@ -12,10 +12,8 @@ class Head extends Component {
             </div>
 
             <div className='social'>
-              <i className='fab fa-facebook-f icon'></i>
-              <i className='fab fa-instagram icon'></i>
-              <i className='fab fa-twitter icon'></i>
-              <i className='fab fa-youtube icon'></i>
+              <i className='fas fa-sign-in-alt icon' title="Login"></i>
+              
             </div>
           </div>
         </section>

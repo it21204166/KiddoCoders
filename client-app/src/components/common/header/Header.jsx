@@ -25,6 +25,7 @@ class Header extends Component {
     return (
       <>
         <Head />
+        
         <header>
           <nav className='flexSB'>
             <ul className={click ? "mobile-nav" : "flexSB "} onClick={this.handleLinkClick}>
@@ -50,6 +51,7 @@ class Header extends Component {
                 <Link to='/contact' onClick={this.handleLinkClick}>Contact</Link>
               </li>
             </ul>
+            
             <div className='start'>
               <div className='button'>GET CERTIFICATE</div>
             </div>
