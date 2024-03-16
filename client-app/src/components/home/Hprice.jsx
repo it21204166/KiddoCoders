@@ -1,18 +1,20 @@
-import React from "react"
-import Heading from "../common/heading/Heading"
-import PriceCard from "../pricing/PriceCard"
+import React, { Component } from "react";
+import Heading from "../common/heading/Heading";
+import PriceCard from "../pricing/PriceCard";
 
-const Hprice = () => {
-  return (
-    <>
-      <section className='hprice padding'>
-        <Heading subtitle='OUR PRICING' title='Pricing & Packages' />
-        <div className='price container grid'>
-          <PriceCard />
-        </div>
-      </section>
-    </>
-  )
+class Hprice extends Component {
+  render() {
+    return (
+      <>
+        <section className='hprice padding'>
+          <Heading subtitle='OUR PRICING' title='Pricing & Packages' />
+          <div className='price container grid'>
+            <PriceCard />
+          </div>
+        </section>
+      </>
+    );
+  }
 }
 
-export default Hprice
+export default Hprice;
