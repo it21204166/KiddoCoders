@@ -1,0 +1,167 @@
+.App {}
+
+
+
+
+/*btn css*/
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #0D6EFD;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-warning {
+    background-color: #FFC107;
+    color: black;
+}
+
+.btn-warning:hover {
+    background-color: #ffca2c;
+}
+
+.btn-danger {
+    background-color: #DC3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+.btn-success {
+    background-color: #28A745;
+    color: white;
+    width: 100px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.btn-success:hover {
+    background-color: #28A745;
+}
+
+
+img.home-img {
+    width: 450px;
+  
+}
+
+div.home-img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    height: auto;
+}
+
+
+
+/*--------Sign In---------------*/
+
+
+.form-inputSignin {
+    width: 350px;
+    border: 2px solid #1eb2a6;
+    border-radius: 8px;
+    height: 45px;
+    font-size: 17px;
+    padding: 5px 15px;
+    padding-top: 8px;
+}
+
+.form-inputSignin:focus {
+    outline: none;
+    border: 3px solid #1eb2a6;
+}
+
+
+
+.form-select {
+    width: 100%;
+    border: 2px solid #1eb2a6;
+    border-radius: 8px;
+    height: 45px;
+    font-size: 16px;
+}
+
+.form-select:focus {
+    outline: none;
+    border: 3px solid #1eb2a6;
+}
+
+label.primary{
+    background-color: #fff;
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    padding: 0 5px;
+}
+
+.image-container{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.signup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+image-containerprofile{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-containerprofile{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-item-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

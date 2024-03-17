@@ -10,15 +10,21 @@ import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
+import Signup from "./components/auth/SignUp";
+import SignIn from "./components/auth/SignIn";
+import ProfileKiddo from "./components/auth/ProfileKiddo";
 
 class App extends Component {
   render() {
     return (
       <>
         <Router>
-          <Header />
+          
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/SignIn' component={SignIn} />
+            <Route exact path='/ProfileKiddo' component={ProfileKiddo} />
             <Route exact path='/about' component={About} />
             <Route exact path='/courses' component={CourseHome} />
             <Route exact path='/team' component={Team} />
@@ -26,7 +32,7 @@ class App extends Component {
             <Route exact path='/journal' component={Blog} />
             <Route exact path='/contact' component={Contact} />
           </Switch>
-          <Footer />
+          
         </Router>
       </>
     );
