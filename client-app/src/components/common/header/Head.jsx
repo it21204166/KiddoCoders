@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class Head extends Component {
   render() {
     return (
@@ -12,7 +13,7 @@ class Head extends Component {
             </div>
 
             <div className='social'>
-              <i className='fas fa-sign-in-alt icon' title="Login"></i>
+            <a href="/signup"><i className='fas fa-sign-in-alt icon' title="Login" ></i></a>
               
             </div>
           </div>
