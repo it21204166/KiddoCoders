@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Geeshan Imports
 import ExersicePage from "./components/Exersice/Exersice";
+import AddExercise from "./components/Exersice/AddExercise"
 import Selflearning from "./components/Exersice/SelfLearning";
 
 // Yoshitha Imports
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         {/* Geeshan Routes */}
         <Route path="/exercisemanagement/exercise" element={<ExersicePage />} />
+        <Route path="/exercisemanagement/exercise/addexercise" element={<AddExercise />} />
         <Route path="/exercisemanagement/selflearning" element={<Selflearning />} />
 
         {/* Yoshitha Routes */}

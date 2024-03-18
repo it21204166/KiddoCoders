@@ -3,7 +3,7 @@ const AddExersice = require('../../models/ExerciseModel/ExerciseModel')
 
 const router = express.Router()
 
-router.post('/exersice/post', (req, res) => {
+router.post('/addexercise/post', (req, res) => {
     let newExercise = new AddExersice(req.body)
 
     newExercise.save().then(() => {

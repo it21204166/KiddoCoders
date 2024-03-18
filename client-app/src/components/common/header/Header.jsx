@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Head from "./Head";
 import "./header.css";
 
@@ -30,25 +29,25 @@ class Header extends Component {
           <nav className='flexSB'>
             <ul className={click ? "mobile-nav" : "flexSB "} onClick={this.handleLinkClick}>
               <li>
-                <Link to='/' onClick={this.handleLinkClick}>Home</Link>
+                <a href='/' onClick={this.handleLinkClick}>Home</a>
               </li>
               <li>
-                <Link to='/courses' onClick={this.handleLinkClick}>Tutorials</Link>
+                <a href='/courses' onClick={this.handleLinkClick}>Tutorials</a>
               </li>
               <li>
-                <Link to='/about' onClick={this.handleLinkClick}>Exercises</Link>
+                <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>
               </li>
               <li>
-                <Link to='/team' onClick={this.handleLinkClick}>Quizes</Link>
+                <a href='/team' onClick={this.handleLinkClick}>Quizes</a>
               </li>
               <li>
-                <Link to='/pricing' onClick={this.handleLinkClick}>Feedback</Link>
+                <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>
               </li>
               <li>
-                <Link to='/journal' onClick={this.handleLinkClick}>About Us</Link>
+                <a href='/journal' onClick={this.handleLinkClick}>About Us</a>
               </li>
               <li>
-                <Link to='/contact' onClick={this.handleLinkClick}>Contact</Link>
+                <a href='/contact' onClick={this.handleLinkClick}>Contact</a>
               </li>
             </ul>
             
