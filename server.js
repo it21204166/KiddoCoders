@@ -11,7 +11,9 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const postRoutes = require('./routes/exersice/routesPost')
+const postRoutesKiddo = require('./routes/kiddo/routesPost')
 app.use( postRoutes)
+app.use('/kiddoPost', postRoutesKiddo)
 
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')
