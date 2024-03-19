@@ -28,8 +28,8 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    margin-top: 8px;
-    margin-left:2px;
+    
+    
     background: #0E635D;
     width: 200px;
     height:100vh;

@@ -1,27 +1,37 @@
-const mongoose = require('mongoose')
+// Exercise.js
 
-const exercise = new mongoose.Schema({
+const mongoose = require('mongoose');
 
-    
-    questionText: {
-        type: String,
-        required:false
+const exerciseSchema = new mongoose.Schema({
+  eTitle: {
+    type: String,
+    required: true
+  },
+  eAbout: {
+    type: String,
+    required: true
+  },
+  eCategory: {
+    type: String,
+    enum: ['Beginners', 'Intermediate'],
+    required: true
+  },
+  exercises: [{
+    eParagrapgh: {
+      type: String,
+      required: true
     },
-
-    blankQuestion: {
-        type: String,
-        required:false
+    eQuestion: {
+      type: String,
+      required: true
     },
+    eAnswer: {
+      type: String,
+      required: true
+    }
+  }]
+});
 
-    blankAnswer: {
-        type: String,
-        required:false
-    },
+const Exercise = mongoose.model('Exercise', exerciseSchema);
 
-    
-    
-    
-
-})
-
-module.exports = mongoose.model('Exersice', exercise)
+module.exports = Exercise;
