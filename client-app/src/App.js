@@ -13,6 +13,9 @@ import Home from "./components/home/Home";
 import Signup from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
 import ProfileKiddo from "./components/auth/ProfileKiddo";
+import Addquestions from "./components/questions/Addquestions";
+import Updatequestions from "./components/questions/Updatequestions";
+import DisplayQ from "./components/questions/Displayquestions"
 
 class App extends Component {
   // constructor(props) {
@@ -44,6 +47,9 @@ class App extends Component {
           <Route exact path='/pricing' component={Pricing} />
           <Route exact path='/journal' component={Blog} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/addquestions' component={Addquestions} />
+          <Route exact path='/updatequestions' component={Updatequestions} />
+          <Route exact path='/displayquestions' component={DisplayQ} />
 
 
 

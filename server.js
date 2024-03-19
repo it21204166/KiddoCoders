@@ -10,6 +10,11 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
+
+
+const postRoutes = require('./routes/tutorial/routesPost')
+app.use (  postRoutes)
+
 const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)
 
