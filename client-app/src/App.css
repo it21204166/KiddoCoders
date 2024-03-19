@@ -18,20 +18,31 @@ body {
   justify-content: space-between;
 }
 .icon {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 50%;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #1eb2a6;
+  font-size: 30px;
+  background-color: rgba(255, 0, 0, 0.3);
+  color: #fcfcfc;
   transition: 0.5s;
+  
 }
 .icon:hover {
   cursor: pointer;
   background-color: #1eb2a6;
   color: #fff;
 }
+
+
+
+.icon-p:hover {
+  cursor: pointer;
+  background-color: #1eb2a6;
+  color: #fff;
+}
+
 a {
   text-decoration: none;
 }

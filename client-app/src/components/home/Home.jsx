@@ -1,22 +1,19 @@
-import React from "react"
-import AboutCard from "../about/AboutCard"
-import Hblog from "./Hblog"
-import HAbout from "./HAbout"
-import Hero from "./hero/Hero"
-import Hprice from "./Hprice"
-import Testimonal from "./testimonal/Testimonal"
+import React, { Component } from "react";
+import HomeMain from "../home/HomeMain"
+import Header from "../common/header/Header";
+import Footer from "../common/footer/Footer";
+// corrected the import name
 
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      <AboutCard />
-      <HAbout />
-      <Testimonal />
-      <Hblog />
-      <Hprice />
-    </>
-  )
+class Home extends Component {
+  render() {
+    return (
+      <>
+      <Header />
+       <HomeMain/> 
+       <Footer />
+      </>
+    );
+  }
 }
 
-export default Home
+export default Home;

@@ -28,8 +28,8 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    margin-top: 8px;
-    margin-left:2px;
+    
+    
     background: #0E635D;
     width: 200px;
     height:100vh;
@@ -121,3 +121,111 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
+
+/*import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Link, useLocation } from "react-router-dom";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import { SidebarData } from "./SidebarData";
+import SubMenu from "./SubMenu";
+import { IconContext } from "react-icons/lib";
+
+const Nav = styled.div`
+  background: #1eb2a6;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+`;
+
+const NavIcon = styled(Link)`
+  font-size: 20px;
+  height: 87px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 1rem;
+`;
+
+const SidebarNav = styled.nav`
+  margin-top: 8px;
+  margin-left: 2px;
+  background: #0e635d;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  transition: 350ms;
+  z-index: 10;
+`;
+
+const SidebarWrap = styled.div`
+  width: 100%;
+`;
+
+const Sidebar = () => {
+  const [sidebar, setSidebar] = useState(false);
+  const location = useLocation();
+
+  const getHeaderTitle = () => {
+    const pathSegments = location.pathname.split('/').filter(segment => segment !== '');
+    let title = '';
+    let currentNav = SidebarData;
+  
+    for (let i = 0; i < pathSegments.length; i++) {
+      const segment = pathSegments[i];
+      const foundNavItem = currentNav.find(item => item.title.toLowerCase() === segment.toLowerCase());
+      if (foundNavItem) {
+        title += foundNavItem.title;
+        if (foundNavItem.subNav && i < pathSegments.length - 1) {
+          title += ' -> ';
+          currentNav = foundNavItem.subNav;
+        }
+      } else {
+        // If no matching nav item found, return empty string
+        return '<KIDDO/CODERS>';
+      }
+    }
+    return title;
+  };
+  
+
+  const showSidebar = () => setSidebar(!sidebar);
+
+  return (
+    <>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <Nav>
+          <NavIcon to="#">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </NavIcon>
+          <h1 style={{ textAlign: "left", color: "white" }}>{getHeaderTitle()}</h1>
+          <NavIcon to="#">
+            
+    //         </NavIcon>
+    //         </Nav>
+    //         <SidebarNav sidebar={sidebar}>
+    //           <SidebarWrap>
+    //             <NavIcon to="#">
+    //               <AiIcons.AiOutlineClose onClick={showSidebar} />
+    //             </NavIcon>
+    //             {SidebarData.map((item, index) => {
+    //               return <SubMenu item={item} key={index} />;
+    //             })}
+    //           </SidebarWrap>
+    //         </SidebarNav>
+    //       </IconContext.Provider>
+    //     </>
+    //   );
+    // };
+    
+    // export default Sidebar;
+    //  */
