@@ -13,9 +13,13 @@ import Home from "./components/home/Home";
 import Signup from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
 import ProfileKiddo from "./components/auth/ProfileKiddo";
+
 import Addquestions from "./components/questions/Addquestions";
 import Updatequestions from "./components/questions/Updatequestions";
-import DisplayQ from "./components/questions/Displayquestions"
+import Displayquestions from "./components/questions/Displayquestions";
+
+import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
+import BeginnersPage from "./components/Exersice/Beginners/Beginners";
 
 class App extends Component {
   // constructor(props) {
@@ -41,16 +45,21 @@ class App extends Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/SignIn' component={SignIn} />
           <Route exact path='/ProfileKiddo' component={ProfileKiddo} />
-          <Route exact path='/exersice' component={Exersice} />
           <Route exact path='/courses' component={CourseHome} />
           <Route exact path='/team' component={Team} />
           <Route exact path='/pricing' component={Pricing} />
           <Route exact path='/journal' component={Blog} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/addquestions' component={Addquestions} />
-          <Route exact path='/updatequestions' component={Updatequestions} />
-          <Route exact path='/displayquestions' component={DisplayQ} />
+          <Route exact path='/updatequestions/:id' component={Updatequestions} />
+          <Route exact path='/displayquestions' component={Displayquestions} />
 
+          {/* Thisera */}
+          <Route exact path='/exersice' component={Exersice} />
+          <Route exact path='/intermediate' component={IntermediatePage} />
+          <Route exact path='/beginners' component={BeginnersPage} />
+          {/* Tennkoon */}
+          
 
 
           {/* <Route exact path='/exersice'>

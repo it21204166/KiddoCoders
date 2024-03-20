@@ -10,10 +10,9 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
+const QuesRouter = require("./routes/tutorial/QuestionRoute")
+app.use("/ques", QuesRouter)
 
-
-const postRoutes = require('./routes/tutorial/routesPost')
-app.use (  postRoutes)
 
 const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)

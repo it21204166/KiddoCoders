@@ -5,7 +5,7 @@ export default class Exersice2 extends Component {
     return (
         <div>
         <div>
-         <div>
+        <div>
           <h2>C Exersice</h2>
           <hr/>
           <h4>You can test your C skills with W3Schools' Exercises.</h4>

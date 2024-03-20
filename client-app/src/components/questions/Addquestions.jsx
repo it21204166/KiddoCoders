@@ -6,9 +6,10 @@ class Addquestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      FirstName: "",
-      Email: "",
-      Question: "",
+      F_Name: "",
+      Q_Email: "",
+      Q_Question: "",
+      successmsg:"",
       errmsg: ""
     };
     this.handleInput = this.handleInput.bind(this);
@@ -22,18 +23,24 @@ class Addquestions extends Component {
     });
   }
 
-  onSubmit() {
-    const { FirstName, Email, Question } = this.state;
+  onSubmit(event) {
+    event.preventDefault(); 
+    const { F_Name, Q_Email, Q_Question } = this.state;
     const question = {
-      F_Name: FirstName,
-      Q_Email: Email,
-      Q_Question: Question
+      F_Name: F_Name,
+      Q_Email: Q_Email,
+      Q_Question: Q_Question
     };
 
-    axios.post("http://localhost:8000/tutorialPost/questionshow/post", question)
+    axios.post("http://localhost:8000/ques/addQues", question)
       .then((response) => {
         console.log("Success");
-        this.setState({ errmsg: "Question Added Successfully!" });
+        this.setState({ 
+          successmsg : "Question Added Successfully!",
+          F_Name: "", 
+          Q_Email: "",
+          Q_Question: ""
+        });
       })
       .catch(error => {
         console.error("Error Occurred:", error);
@@ -42,7 +49,7 @@ class Addquestions extends Component {
   }
 
   render() {
-    const { FirstName, Email, Question } = this.state;
+    const { F_Name, Q_Email, Q_Question, successmsg, errmsg } = this.state;
     return (
       <div className='signup'>
         <div className='image-container'>
@@ -50,23 +57,30 @@ class Addquestions extends Component {
         </div>
         <div className='form-container'>
           <h1 className="center-item" style={{ fontFamily: "cursive", marginBottom: "35px", marginTop: "30px" }}>Any Question? </h1>
-          <form>
+          <form onSubmit={this.onSubmit}> {/* Attach onSubmit handler to form */}
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>First Name</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='FirstName' value={FirstName} onChange={this.handleInput} placeholder='First Name' />
+              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='F_Name' value={F_Name} onChange={this.handleInput} placeholder='First Name' />
             </div>
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>E-mail</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Email' value={Email} onChange={this.handleInput} placeholder='E-mail' />
+              <input type='email' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Q_Email' value={Q_Email} onChange={this.handleInput} placeholder='E-mail'  />
             </div>
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>Question</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Question' value={Question} onChange={this.handleInput} placeholder='Enter the question' />
+              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Q_Question' value={Q_Question} onChange={this.handleInput} placeholder='Enter the question' />
             </div>
             <div className='input-container'>
-              <button type='button' style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" }} onClick={this.onSubmit}>Add Question</button>
+            <button type='submit' style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" }}>Add Question</button>
+            
             </div>
+
+
           </form>
+
+          <a href="displayquestions"><button type='' style={{ marginLeft: "40%", fontFamily: "cursive", borderRadius: "10px" }}>View</button></a>
+          {successmsg && <p style={{ color: "green", fontFamily: "cursive" }}>{successmsg}</p>}
+          {errmsg && <p style={{ color: "red", fontFamily: "cursive" }}>{errmsg}</p>} {/* Display error message */}
         </div>
       </div>
     );

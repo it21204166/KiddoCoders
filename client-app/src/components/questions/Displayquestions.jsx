@@ -1,87 +1,98 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import '../questions/questions.css';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 class Displayquestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      QuestionDetails: [],
-      searchInput: ""
+      question: [],
     };
-    this.search = this.search.bind(this);
-    this.handleFindInput = this.handleFindInput.bind(this);
-    this.generatePDF = this.generatePDF.bind(this); // You need to define this function
+    
   }
 
   componentDidMount() {
-    axios.get("http://localhost:8000/tutorialGet/questionshow/get").then(res => {
-      if (res.data.success) {
-        this.setState({
-          QuestionDetails: res.data.existingDetails
-        });
-      }
-    });
+    this.fetchItem();
   }
 
-  handleFindInput = (e) => {
-    const searchInput = e.target.value;
-    this.setState({ searchInput }, () => {
-      this.search();
-    });
-  }
+  fetchItem = async () => {
+    try {
+      const result = await axios.get("http://localhost:8000/ques/getQues");
+      this.setState({ question: result.data.result });
+    } catch (error) {
+      console.log(error); 
+    }
+  };
 
-  onSubmit(id) {
-    axios.delete(`http://localhost:8000/tutorialDelete/question/delete/${id}`).then(res => {
-      console.log("Deleted");
-      // Update state after deletion if needed
-      this.setState(prevState => ({
-        QuestionDetails: prevState.QuestionDetails.filter(question => question._id !== id)
+  handleEdit = (clickedItem) => {
+    const id = clickedItem._id;
+    this.props.history.push(`/updatequestions/${id}`);
+    window.location.reload()
+  };
+
+  handleDelete = async (clickedItem) => {
+    const id = clickedItem._id;
+
+    try {
+      await axios.delete(`http://localhost:8000/ques/deleteQues/${id}`);
+      this.setState((prevState) => ({
+        question: prevState.question.filter((item) => item._id !== id),
       }));
-    });
-  }
-
-  generatePDF() {
-    // Implement PDF generation logic here
-  }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     return (
       <div>
-        <h2 style={{ marginLeft: "20px", marginTop: "65px" }}>Frequently Asked Questions</h2>
-        <div><button style={{ marginLeft: "20px" }} className='searchQuestions'><i className="fa-solid fa-magnifying-glass"></i></button><input className='searchPayments' value={this.state.searchInput} onChange={this.handleFindInput} placeholder='Search payments'></input></div>
-        <br />
-        <div className='table-question'>
-          <table className='table-question' id='allquestiondetails' >
-            <thead>
+        <h3>Frequently Ask Questions</h3>
+
+        <div className="container table-container">
+          <table className="table table-borded">
+            <thead className="table-info">
               <tr>
-                <th scope="col" className='table-question' style={{ borderTopLeftRadius: "10px" }}>First Name</th>
-                <th scope="col" className='table-question'>Email</th>
-                <th scope="col" className='table-question'>Question</th>
-                <th scope="col" className='table-question' style={{ border: "none", borderTopRightRadius: "10px" }}>Options</th>
+                <th scope="col">Id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Question</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody scope="raw" >
-              {this.state.QuestionDetails.map((results, index) => (
-                <tr key={results._id}>
-                  <td className='table-question' title={results.FirstName}>{results.FirstName}</td>
-                  <td className='table-question' title={results.Email}>{results.Email}</td>
-                  <td className='table-question' title={results.Questions}>{results.Question}</td>
-                  <td className='table-question' style={{ padding: "5px", border: "none" }}>
-                    <div className='btn-inline-table'>
-                      <a href={`/questions/Updatequestions/${results._id}`}><button type="button" className="btn btn-warning">Update</button></a>
-                      <button onClick={() => this.onSubmit(results._id)} type="button" className="btn btn-danger">Delete</button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+
+            <tbody>
+              {this.state.question.map((item, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.F_Name}</td>
+                    <td>{item.Q_Email}</td>
+                    <td>{item.Q_Question}</td>
+                    <td>
+                      <div className="action-btns">
+                        <button
+                          className="btn btn-warning btn-sm"
+                          onClick={() => this.handleEdit(item)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="btn btn-danger btn-sm"
+                          onClick={() => this.handleDelete(item)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
-        <button style={{ marginLeft: "450px", marginTop: "25px" }} className='btn btn-primary' onClick={this.generatePDF} type='button'>Download PDF</button>
       </div>
     );
   }
 }
 
-export default Displayquestions;
+export default withRouter(Displayquestions);

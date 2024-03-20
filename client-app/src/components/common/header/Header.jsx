@@ -44,7 +44,7 @@ class Header extends Component {
                 <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>
               </li>
               <li>
-                <a href='/journal' onClick={this.handleLinkClick}>About Us</a>
+                <a href='/addquestions' onClick={this.handleLinkClick}>Inquiries</a>
               </li>
               <li>
                 <a href='/contact' onClick={this.handleLinkClick}>Contact</a>
