@@ -13,6 +13,12 @@ app.use(cors())
 const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)
 
+
+// Challenegs Routes
+const ChallengeRoute = require("./routes/ChallengesRoute/ChallengesRoute")
+
+app.use("/challenge", ChallengeRoute)
+
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')
 // const getRoutes = require('./routes/exersice/routesGet')
