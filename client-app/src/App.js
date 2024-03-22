@@ -17,9 +17,16 @@ import ProfileKiddo from "./components/auth/ProfileKiddo";
 import Addquestions from "./components/questions/Addquestions";
 import Updatequestions from "./components/questions/Updatequestions";
 import Displayquestions from "./components/questions/Displayquestions";
+import Addfeedbacks from "./components/feedback/Addfeedbacks";
+import Updatefeedbacks from "./components/feedback/Updatefeedbacks";
+import Displayfeedback from "./components/feedback/Displayfeedbacks";
+import compiler from "./components/Tutorial/compiler";
+import tute from "./components/Tutorial/tute";
+import tutorialhub from "./components/Tutorial/tutorialhub";
 
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
+
 
 class App extends Component {
   // constructor(props) {
@@ -45,7 +52,7 @@ class App extends Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/SignIn' component={SignIn} />
           <Route exact path='/ProfileKiddo' component={ProfileKiddo} />
-          <Route exact path='/courses' component={CourseHome} />
+          
           <Route exact path='/team' component={Team} />
           <Route exact path='/pricing' component={Pricing} />
           <Route exact path='/journal' component={Blog} />
@@ -53,6 +60,12 @@ class App extends Component {
           <Route exact path='/addquestions' component={Addquestions} />
           <Route exact path='/updatequestions/:id' component={Updatequestions} />
           <Route exact path='/displayquestions' component={Displayquestions} />
+          <Route exact path='/addfeedbacks' component={Addfeedbacks} />
+          <Route exact path='/updatefeedbacks/:id' component={Updatefeedbacks} />
+          <Route exact path='/displayfeedbacks' components={Displayfeedback} />
+          <Route exact path='/tutes' component={tute} />
+          <Route exact path='/compilers' component={compiler} />
+          <Route exact path='/tutorialhubs' component={tutorialhub} />
 
           {/* Thisera */}
           <Route exact path='/exersice' component={Exersice} />

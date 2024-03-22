@@ -32,7 +32,7 @@ class Header extends Component {
                 <a href='/' onClick={this.handleLinkClick}>Home</a>
               </li>
               <li>
-                <a href='/courses' onClick={this.handleLinkClick}>Tutorials</a>
+                <a href='/tutes' onClick={this.handleLinkClick}>Tutorials</a>
               </li>
               <li>
                 <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>
@@ -41,7 +41,7 @@ class Header extends Component {
                 <a href='/team' onClick={this.handleLinkClick}>Quizes</a>
               </li>
               <li>
-                <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>
+                <a href='/addfeedbacks' onClick={this.handleLinkClick}>Feedback</a>
               </li>
               <li>
                 <a href='/addquestions' onClick={this.handleLinkClick}>Inquiries</a>

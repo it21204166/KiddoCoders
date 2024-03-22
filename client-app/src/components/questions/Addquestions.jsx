@@ -50,7 +50,8 @@ class Addquestions extends Component {
 
   render() {
     const { F_Name, Q_Email, Q_Question, successmsg, errmsg } = this.state;
-    return (
+    return ( 
+    
       <div className='signup'>
         <div className='image-container'>
           <img style={{ width: "900px", height: "810px" }} className='register_boy' src='../../question.png' alt="Question" />
@@ -78,11 +79,12 @@ class Addquestions extends Component {
 
           </form>
 
-          <a href="displayquestions"><button type='' style={{ marginLeft: "40%", fontFamily: "cursive", borderRadius: "10px" }}>View</button></a>
+          <a href="displayquestions"><button type='' style={{ marginLeft: "20%", fontFamily: "cursive", borderRadius: "10px" }}>View</button></a>
           {successmsg && <p style={{ color: "green", fontFamily: "cursive" }}>{successmsg}</p>}
           {errmsg && <p style={{ color: "red", fontFamily: "cursive" }}>{errmsg}</p>} {/* Display error message */}
         </div>
       </div>
+      
     );
   }
 }

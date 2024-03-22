@@ -13,6 +13,9 @@ app.use(cors())
 const QuesRouter = require("./routes/tutorial/QuestionRoute")
 app.use("/ques", QuesRouter)
 
+const FeedRouter = require("./routes/tutorial/FeedbackRoute")
+app.use("/feed", FeedRouter)
+
 
 const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)

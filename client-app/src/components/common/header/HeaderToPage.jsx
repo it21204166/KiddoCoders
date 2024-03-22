@@ -30,7 +30,7 @@ export default class HeaderToPage extends Component {
                                 <a href='/' onClick={this.handleLinkClick}>Home</a>
                             </li>
                             <li>
-                                <a href='/courses' onClick={this.handleLinkClick}>Tutorials</a>
+                                <a href='/tutes' onClick={this.handleLinkClick}>Tutorials</a>
                             </li>
                             <li>
                                 <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>

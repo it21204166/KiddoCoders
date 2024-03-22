@@ -58,7 +58,7 @@ class Updatequestions extends Component {
     return (
       <div className='signup'>
         <div className='image-container'>
-          <img style={{ width: "900px", height: "795px" }} className='register_boy' src='../../question.png' alt="Question"/>
+          <img style={{ width: "900px", height: "810px" }} className='register_boy' src='../../question.png' alt="Question"/>
         </div>
         <div className='form-container'>
           <h1 className="center-item" style={{ fontFamily: "cursive", marginBottom: "35px", marginTop: "30px" }}>Update the Question </h1>
