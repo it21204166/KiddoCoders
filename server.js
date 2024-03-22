@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 
+
 const app = express()
 
 
@@ -11,7 +12,17 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const postRoutes = require('./routes/exersice/routesPost')
+const userRoutes = require('./routes/kiddo/userRoutes')
+//const postRoutesKiddo = require('./routes/kiddo/routesPost')
+//const getRouterKiddo = require('./routes/kiddo/routesGet')
+//const putRouterKiddo = require('./routes/kiddo/routesPut')
+
+
 app.use( postRoutes)
+app.use("/admin/users", userRoutes);
+//app.use('/kiddoPost', postRoutesKiddo)
+//app.use('/kiddoGet',getRouterKiddo )
+//app.use('/kiddoPut',putRouterKiddo)
 
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')

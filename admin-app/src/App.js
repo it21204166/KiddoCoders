@@ -14,6 +14,11 @@ import IntermediatePage from "./components/Tutorials/Intermediate";
 // Nethma Imports
 import ChallengePage from "./components/Challenges/Challenge";
 
+// Dhanuka Imports
+import SignInAdmin from "./components/authadmin/SignInAdmin";
+import SignUpAdmin from "./components/authadmin/SignUpAdmin";
+import ProfileAdmin from "./components/authadmin/ProfileAdmin";
+
 function App() {
   return (
     <Router>
@@ -30,6 +35,14 @@ function App() {
 
         {/* Nethma Routes */}
         <Route path="/challenge" element={<ChallengePage />} />
+
+        {/* Dhanuka Routes */}
+        <Route path="/SignInAdmin" element={<SignInAdmin/>} />
+        <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
+        <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
+
+
+
       </Routes>
     </Router>
   );
