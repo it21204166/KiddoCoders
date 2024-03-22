@@ -16,6 +16,11 @@ import ChallengeRead from "./components/Challenges/ChallengeRead";
 import ChallengeAdd from "./components/Challenges/ChallengeAdd";
 import ChallengeEdit from "./components/Challenges/ChallengeEdit";
 
+// Dhanuka Imports
+import SignInAdmin from "./components/authadmin/SignInAdmin";
+import SignUpAdmin from "./components/authadmin/SignUpAdmin";
+import ProfileAdmin from "./components/authadmin/ProfileAdmin";
+
 function App() {
     return (
         <Router>
@@ -45,6 +50,7 @@ function App() {
                     element={<IntermediatePage />}
                 />
 
+<<<<<<< HEAD
                 {/* Nethma Routes */}
                 <Route path="/challenge/read" element={<ChallengeRead />} />
                 <Route path="/challenge/add" element={<ChallengeAdd />} />
@@ -52,6 +58,21 @@ function App() {
             </Routes>
         </Router>
     );
+=======
+        {/* Nethma Routes */}
+        <Route path="/challenge" element={<ChallengePage />} />
+
+        {/* Dhanuka Routes */}
+        <Route path="/SignInAdmin" element={<SignInAdmin/>} />
+        <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
+        <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
+
+
+
+      </Routes>
+    </Router>
+  );
+>>>>>>> 97fccce6d345e42984080dfd97119b1347f1df38
 }
 
 export default App;
