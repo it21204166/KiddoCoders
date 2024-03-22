@@ -52,7 +52,7 @@ class Header extends Component {
             </ul>
             
             <div className='start'>
-              <div className='button'>GET CERTIFICATE</div>
+              <a href="/ProfileKiddo"><div className='button'>Kiddo Profile</div></a>
             </div>
             <button className='toggle' onClick={this.handleClick}>
               {click ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}
