@@ -3,6 +3,7 @@ const AddKiddo = require('../../models/KiddoModel/KiddoModel')
 
 const router = express.Router()
 
+
 router.post('/kiddoavailable/post', (req, res) => {
     let newkiddoavailable = new AddKiddo(req.body)
 
@@ -18,6 +19,5 @@ router.post('/kiddoavailable/post', (req, res) => {
         });
     });
 });
-
 
 module.exports = router

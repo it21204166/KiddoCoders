@@ -1,7 +1,187 @@
 import React, { Component } from "react";
 import "./auth.css";
-import axios from 'axios'
+import { RegisterUser } from "./apiCalls/users";
+import { message } from "antd"; // Importing message module from antd
 
+class register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {
+        kiddoName: "",
+        kiddoPhone: "",
+        kiddoEmail: "",
+        kiddoAge: "",
+        kiddoPassword: "",
+      },
+    };
+  }
+
+  handleInputFocus = (e) => {
+    e.target.parentNode.classList.add("active-label");
+  };
+
+  handleInputBlur = (e) => {
+    if (e.target.value === "") {
+      e.target.parentNode.classList.remove("active-label");
+    }
+  };
+
+  onInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
+      formData: {
+        ...prevState.formData,
+        [name]: value,
+      },
+    }));
+  };
+
+  onFinish = async (event) => {
+    event.preventDefault();
+    const { formData } = this.state;
+    const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    if (!emailRegex.test(formData.kiddoEmail)) {
+      message.error("Please enter a valid email address.");
+      return;
+    }
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(formData.kiddoPassword)) {
+      message.error(
+        "Password must contain at least 8 characters with at least one letter and one number."
+      );
+      return;
+    }
+    try {
+      const response = await RegisterUser(formData);
+      console.log("Response:", response);
+
+      if (response && response.success) {
+        message.success(response.message);
+        localStorage.setItem("AuthToken", response.data);
+      } else {
+        message.error(response?.message || "An error occurred.1234");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      message.error("An error occurred.");
+    }
+  };
+
+  render() {
+    const { formData } = this.state;
+
+    return (
+      <div className='signup'>
+        <div className='image-container'>
+          <img style={{width:"900px",height:"760px"}} className='register_boy' src='../../register.png'/>
+        </div>
+        <div className='form-container' >
+        <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"35px", marginTop:"30px"}}>REGISTER</h1>
+        <form onSubmit={this.onFinish}>
+            <div className='input-container' >
+              <label className='primary' style={{fontFamily:"cursive"}}>Full Name</label>
+              <input 
+                type='text' 
+                id="fname"
+                name="kiddoName"
+                value={formData.kiddoName}
+                onChange={this.onInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                required
+                pattern="[A-Za-z ]+"
+                className='form-inputSignin' 
+                style={{fontFamily:"cursive"}}  
+                placeholder='kiddo Name'/>
+            </div>
+            <div className='input-container'>
+              <label className='primary' style={{fontFamily:"cursive"}}>Phone Number</label>
+              <input 
+                type='text' 
+                id="lname"
+                name="kiddoPhone"
+                value={formData.kiddoPhone}
+                onChange={this.onInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                required
+                pattern="[A-Za-z ]+"
+                className='form-inputSignin' 
+                style={{fontFamily:"cursive"}}
+                placeholder='kiddo Phone'/>
+            </div>
+            <div className='input-container'>
+              <label className='primary' style={{fontFamily:"cursive"}}>E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="kiddoEmail"
+                value={formData.kiddoEmail}
+                onChange={this.onInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                required
+                className='form-inputSignin'
+                style={{fontFamily:"cursive"}}
+                placeholder='kiddo@gmail.com'/>
+            </div>
+            <div className='input-container'>
+              <label className='primary' style={{fontFamily:"cursive"}}>Age</label>
+              <input type='text'
+                id="kiddoAge"
+                name="kiddoAge"
+                value={formData.kiddoAge}
+                onChange={this.onInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                required
+                className='form-inputSignin'
+                style={{fontFamily:"cursive"}}
+                placeholder='kiddo Age'/>
+            </div>
+            <div className='input-container'>
+              <label className='primary' style={{fontFamily:"cursive"}}>Password</label>
+              <input 
+                type="password"
+                id="password"
+                name="kiddoPassword"
+                value={formData.kiddoPassword}
+                onChange={this.onInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                required
+                className='form-inputSignin'
+                style={{fontFamily:"cursive"}}
+                placeholder='kiddo Password'/>
+            </div>
+            <div className='input-container'>
+            <a href='/'><button type='submit' onClick={this.onFinish} style={{marginLeft:"35%", fontFamily:"cursive", borderRadius:"10px", marginTop:"0px"}}>REGISTER</button></a>
+            </div>
+            <div className='input-container'>
+              <h4 className='primary' style={{fontFamily:"cursive"}}>Already have an account please <a href='/SignIn'><button type='button' style={{fontFamily:"cursive", borderRadius:"10px"}}>Login</button></a></h4>
+            </div>
+          </form>
+        </div>
+      
+      </div>
+
+      
+    );
+  }
+}
+
+export default register;
+
+
+
+
+
+
+/*
+import React, { Component } from "react";
+import "./auth.css";
+import axios from 'axios'
 
 
 class Signup extends Component {
@@ -126,3 +306,4 @@ class Signup extends Component {
 }
 
 export default Signup;
+*/

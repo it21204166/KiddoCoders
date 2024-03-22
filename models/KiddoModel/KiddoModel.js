@@ -3,11 +3,6 @@ const mongoose = require('mongoose')
 const kiddo_schema = new mongoose.Schema({
 
     
-    kiddoID: {
-        type: String,
-        required: false
-    },
-
     kiddoName: {
         type: String,
         required: true
@@ -28,16 +23,11 @@ const kiddo_schema = new mongoose.Schema({
         required: true
     },
     
-    kiddoCountry: {
-        type: String,
-        required: true
-    },
-
     kiddoPassword: {
         type: String,
         required: true
     },
 
-})
+}, { timestamps: true });
 
-module.exports = mongoose.model('Kiddo', kiddo_schema)
+module.exports = mongoose.model('users', kiddo_schema)
