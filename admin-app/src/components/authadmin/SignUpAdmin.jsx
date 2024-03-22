@@ -8,9 +8,9 @@ class SignUpAdmin extends Component {
         <div className='image-container'>
         <img style={{width:"900px",height:"695px"}} className='register_boy' src='../../adminregister.png'/>
         </div>
-        <div className='form-container' >
-        <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"35px", marginTop:"30px"}}>Admin REGISTER</h1>
-          <form action='' style={{border:"solid"}}>
+        <div className='form-containerr' style={{backgroundColor:"white", borderRadius:"10px", marginRight:"40px"}}>
+        <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"35px", marginTop:"30px"}}>ADMIN REGISTER</h1>
+          <form action=''>
             <div className='input-container' >
               <label className='primary' style={{fontFamily:"cursive"}}>Name</label>
               <input type='text' className='form-inputSignin' style={{fontFamily:"cursive"}} name='supName' onChange={this.haddleInputChanges} placeholder='Admin Name'/>

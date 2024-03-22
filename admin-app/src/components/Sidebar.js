@@ -100,7 +100,7 @@ const Sidebar = () => {
                     <h1 style={{ textAlign: "center", color: "white" }}>
                         {'<KIDDO/CODERS>'}
                     </h1>
-                    <NavIcon to="#">
+                    <NavIcon to="/SignUpAdmin">
                         <UserProfileIcon />
                     </NavIcon>
                 </Nav>

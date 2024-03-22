@@ -6,10 +6,9 @@ class ProfileAdmin extends Component {
     return(
       <div className='signup'>
         <div className='image-containerprofile'>
-        <h1 className="center-item" style={{fontFamily:"cursive", marginLeft:"45%", marginTop:"20px"}}>WELCOME!</h1>
-        <img style={{width:"400px",height:"650px", marginLeft:"10%"}} className='register_boy' src='../../adminprofile.png'/>
+        <img style={{width:"450px",height:"650px", marginLeft:"5%"}}  src='../../adminprofile.png'/>
         </div>
-        <div className='form-containerprofile' style={{border:"solid", backgroundColor:"#f2f2f2", borderRadius:"10PX", marginTop:"2%", marginRight:"10%", marginBottom:"20px"}}>
+        <div className='form-containerprofile' style={{border:"solid", backgroundColor:"#f2f2f2", borderRadius:"10PX", marginTop:"1%", marginRight:"8%", marginBottom:"20px"}}>
         <h1 className="center-item" style={{fontFamily:"cursive",marginBottom:"35px", marginTop:"30px"}}>EDIT ADMIN PROFILE</h1>
         <form>
           <br></br>
