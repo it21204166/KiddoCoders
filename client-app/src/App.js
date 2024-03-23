@@ -15,6 +15,7 @@ import SignIn from "./components/auth/SignIn";
 import ProfileKiddo from "./components/auth/ProfileKiddo";
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
+import BeginnersExersixePage from "./components/Exersice/Beginners/BeginnersExercise"
 
 class App extends Component {
   // constructor(props) {
@@ -50,6 +51,8 @@ class App extends Component {
           <Route exact path='/exersice' component={Exersice} />
           <Route exact path='/intermediate' component={IntermediatePage} />
           <Route exact path='/beginners' component={BeginnersPage} />
+          <Route exact path='/beginnersexercise' component={BeginnersExersixePage} />
+
           {/* Tennkoon */}
           
 

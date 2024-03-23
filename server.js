@@ -11,7 +11,11 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const postRoutes = require('./routes/exersice/routesPost')
+const getRoutes = require('./routes/exersice/routesGet')
+const deleteRoutes = require('./routes/exersice/routesDelete')
 app.use( postRoutes)
+app.use( getRoutes)
+app.use( deleteRoutes)
 
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')

@@ -13,6 +13,7 @@ import IntermediatePage from "./components/Tutorials/Intermediate";
 
 // Nethma Imports
 import ChallengePage from "./components/Challenges/Challenge";
+import DisplayExercisePage from "./components/Exersice/DisplayExercise";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/exercisemanagement/exercise" element={<ExersicePage />} />
         <Route path="/exercisemanagement/exercise/addexercise" element={<AddExercise />} />
         <Route path="/exercisemanagement/selflearning" element={<Selflearning />} />
+        <Route pat="/exercise/view" element={<DisplayExercisePage/>}/>
 
         {/* Yoshitha Routes */}
         <Route path="/tutorials/beginners" element={<BeginnersPage />} />

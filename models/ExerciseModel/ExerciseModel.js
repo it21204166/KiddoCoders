@@ -7,11 +7,16 @@ const exerciseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  eCategory: {
+    type: String,
+    enum: ['C Syntax', 'C Comments', 'C Variables', 'C Data Types', 'C Constants', 'C Operators', 'C Booleans', 'C If...Else', 'C Switch', 'C Loops', 'C Arrays', 'C Strings', 'C Pointers', 'C Functions', 'C Structures'],
+    required: true
+  },
   eAbout: {
     type: String,
     required: true
   },
-  eCategory: {
+  eUnder: {
     type: String,
     enum: ['Beginners', 'Intermediate'],
     required: true
