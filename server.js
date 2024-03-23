@@ -24,6 +24,12 @@ app.use("/admin/users", userRoutes);
 //app.use('/kiddoGet',getRouterKiddo )
 //app.use('/kiddoPut',putRouterKiddo)
 
+
+// Challenegs Routes
+const ChallengeRoute = require("./routes/ChallengesRoute/ChallengesRoute")
+
+app.use("/challenge", ChallengeRoute)
+
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')
 // const getRoutes = require('./routes/exersice/routesGet')
