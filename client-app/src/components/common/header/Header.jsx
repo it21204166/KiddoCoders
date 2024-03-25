@@ -38,7 +38,7 @@ class Header extends Component {
                 <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>
               </li>
               <li>
-                <a href='/challenge' onClick={this.handleLinkClick}>Challenges</a>
+                <a href='/team' onClick={this.handleLinkClick}>Quizes</a>
               </li>
               <li>
                 <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>
