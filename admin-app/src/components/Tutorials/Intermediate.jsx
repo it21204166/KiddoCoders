@@ -10,7 +10,7 @@ class Intermediate extends Component {
         </div>
         <div className='form-container' >
         <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"35px", marginTop:"30px"}}>Manage Tutorial for Intermediates</h1>
-          <form action='' style={{border:"solid"}}>
+          <form action=''>
             <div className='input-container' >
               <label className='primary' style={{fontFamily:"cursive"}}>TITLE</label>
               <input type='text' className='form-inputSignin' style={{fontFamily:"cursive"}} name='supName' onChange={this.haddleInputChanges} placeholder='Add a title'/>

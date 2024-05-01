@@ -20,6 +20,7 @@ import Displayquestions from "./components/questions/Displayquestions";
 import Addfeedbacks from "./components/feedback/Addfeedbacks";
 import Updatefeedbacks from "./components/feedback/Updatefeedbacks";
 import Displayfeedback from "./components/feedback/Displayfeedbacks";
+import Displayfeedback2 from "./components/feedback/Displayfeedback2";
 import compiler from "./components/Tutorial/compiler";
 import tute from "./components/Tutorial/tute";
 import tutorialhub from "./components/Tutorial/tutorialhub";
@@ -63,6 +64,7 @@ class App extends Component {
           <Route exact path='/addfeedbacks' component={Addfeedbacks} />
           <Route exact path='/updatefeedbacks/:id' component={Updatefeedbacks} />
           <Route exact path='/displayfeedbacks' components={Displayfeedback} />
+          <Route exact path='/displayfeedback2' component={Displayfeedback2} />
           <Route exact path='/tutes' component={tute} />
           <Route exact path='/compilers' component={compiler} />
           <Route exact path='/tutorialhubs' component={tutorialhub} />

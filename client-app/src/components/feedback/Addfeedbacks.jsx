@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import "./feedback.css";
+import HeaderToPage from "../common/header/HeaderToPage";
+
 
 class Addfeedbacks extends Component {
   constructor(props) {
@@ -57,7 +59,10 @@ class Addfeedbacks extends Component {
   render() {
     const { Fu_Name, F_Email, F_Visit, F_Service, F_Feedback, successmsg, errmsg } = this.state;
     return (
-      <div className='signup'>
+      <div>
+      <div className='bg11'>
+      <HeaderToPage/>
+      <div style={{backgroundColor: "white"}}className='signup'>
         <div className='image-container'>
           <img style={{ width: "900px", height: "810px" }} className='register_boy' src='../../feedback.png' alt="Feedback" />
         </div>
@@ -93,17 +98,20 @@ class Addfeedbacks extends Component {
               <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='F_Feedback' value={F_Feedback} onChange={this.handleInput} placeholder='Enter the question' />
             </div>
             <div className='input-container'>
-            <button type='submit' style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" }}>Submit</button>
+            <button type='submit' style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px", backgroundColor: "#1eb2a6" , color: "white"}}>Submit</button>
             
             </div>
 
 
+
           </form>
 
-          <a href="displayfeedbacks"><button type='' style={{ marginLeft: "5%", fontFamily: "cursive", borderRadius: "10px" }}>View</button></a>
+          <a href="displayfeedback2"><button type='' style={{ marginLeft: "10%", marginTop: "7px", fontFamily: "cursive", borderRadius: "10px" , backgroundColor: "#1eb2a6", color:"white" }}>View</button></a>
           {successmsg && <p style={{ color: "green", fontFamily: "cursive" }}>{successmsg}</p>}
           {errmsg && <p style={{ color: "red", fontFamily: "cursive" }}>{errmsg}</p>} {/* Display error message */}
         </div>
+      </div>
+      </div>
       </div>
     );
   }

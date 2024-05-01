@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./feedback.css";
 import axios from 'axios';
+import HeaderToPage from "../common/header/HeaderToPage";
 
 class Updatefeedbacks extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Updatefeedbacks extends Component {
     await axios.put(`http://localhost:8000/feed/editFeed/${id}`, Updatedata)
       .then(response => {
         console.log("success updated");
-        this.props.history.push("/displayfeedbacks");
+        this.props.history.push("/displayfeedback2");
         window.location.reload()
       }).catch(error => {
         console.error("Error:", error);
@@ -62,7 +63,10 @@ class Updatefeedbacks extends Component {
   render() {
     const { Fu_Name, F_Email, F_Visit, F_Service,F_Feedback } = this.state;
     return (
-      <div className='signup'>
+      <div>
+      <div className='bg11'>
+      <HeaderToPage/>
+      <div style={{backgroundColor:"white"}}className='signup'>
         <div className='image-container'>
           <img style={{ width: "900px", height: "810px" }} className='register_boy' src='../../feedback.png' alt="Feedback"/>
         </div>
@@ -98,10 +102,12 @@ class Updatefeedbacks extends Component {
               <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='F_Feedback' value={F_Feedback} onChange={this.handleInput} placeholder='Edit the feedback' />
             </div>
             <div className='input-container'>
-              <button type='button' onClick={this.onSubmit} style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" }}>Update Feedback</button>
+              <button type='button' onClick={this.onSubmit} style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px", backgroundColor: "#1eb2a6", color: "white" }}>Update Feedback</button>
             </div>
           </form>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

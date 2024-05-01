@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./questions.css";
 import axios from 'axios';
+import HeaderToPage from "../common/header/HeaderToPage";
 
 class Updatequestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.match.params.id, // Extract id from props
+      id: this.props.match.params.id, 
       F_Name: "",
       Q_Email: "",
       Q_Question: ""
@@ -56,7 +57,10 @@ class Updatequestions extends Component {
   render() {
     const { F_Name, Q_Email, Q_Question } = this.state;
     return (
-      <div className='signup'>
+      <div>
+      <div className='bg11'>
+      <HeaderToPage/>
+      <div style={{backgroundColor:"white"}} className='signup'>
         <div className='image-container'>
           <img style={{ width: "900px", height: "810px" }} className='register_boy' src='../../question.png' alt="Question"/>
         </div>
@@ -76,10 +80,12 @@ class Updatequestions extends Component {
               <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Q_Question' value={Q_Question} onChange={this.handleInput} placeholder='Edit the question' />
             </div>
             <div className='input-container'>
-              <button type='button' onClick={this.onSubmit} style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" }}>Update Question</button>
+              <button type='button' onClick={this.onSubmit} style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px", backgroundColor: "#1eb2a6", color: "white" }}>Update Question</button>
             </div>
           </form>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

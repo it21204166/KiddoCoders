@@ -1,5 +1,6 @@
 const express = require("express")
-let QuestionModel = require("../../models/Tutorials/modelquestion")
+let QuestionModel = require("../../models/Tutorials/modelquestion");
+const modelquestion = require("../../models/Tutorials/modelquestion");
 const router = express.Router()
 
 // Add Questio
@@ -91,6 +92,23 @@ router.delete("/deleteQues/:id", async (req, res) => {
         });
     }
 });
+
+// question search function
+
+router.get('/getQues/search', (req, res) => {
+    const searchQuery = req.query.q
+    const regex = new RegExp(searchQuery, 'i')
+
+    QuestionModel.find({ $or: [{  Q_Question: regex }, {F_Name : regex },] }).then((results) => {
+        console.log(results)
+        return res.status(200).json({
+            success: true,
+            searchedDetails: results
+        })
+    }).catch((err) => {
+        console.error(err)
+    })
+})
 
 
 
