@@ -17,6 +17,7 @@ import BeginnersPage from "./components/Exersice/Beginners/Beginners";
 
 import Challenges from "./components/Challenges/ChallengePage";
 import ChallengeDetailsPage from "./components/Challenges/ChallengeDetailsPage";
+import AttempChallenge from "./components/Challenges/AttempChallenge";
 
 class App extends Component {
     // constructor(props) {
@@ -67,6 +68,7 @@ class App extends Component {
                         exact path="/challenge/details/:id"
                         component={ChallengeDetailsPage}
                     />
+                    <Route exact path="/challenge/attemp/:id" component={AttempChallenge}/>
 
                     {/* <Route exact path='/exersice'>
             {isAuthenticated ? <Exersice /> : <Redirect to='/signup' />}

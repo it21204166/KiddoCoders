@@ -28,7 +28,6 @@ function QuizList() {
     const handleClick = (clickedItem) => {
         const id = clickedItem._id
         history.push(`/challenge/details/${id}`);
-        window.location.reload();
     }
 
     return (
