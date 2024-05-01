@@ -3,11 +3,9 @@ import "./ChallengeDetailsPage.css"
 import { useParams } from 'react-router-dom'
 import { api } from '../../Config';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 
 function ChallengeDetailsPage() {
   const params = useParams();
-  const navigate = useNavigate()
   const [challenge, setChallenge] = useState({ scorePoints: [] });
 
   useEffect(() => {
@@ -22,7 +20,8 @@ function ChallengeDetailsPage() {
   }, [params.id]);
 
   const handleAttemp = (clickekdItem) => {
-      alert("hello")
+      const id = clickekdItem._id
+      alert(id)
   };
 
   return (
