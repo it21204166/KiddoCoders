@@ -11,14 +11,14 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-const postRoutes = require('./routes/exersice/routesPost')
+// const postRoutes = require('./routes/exersice/routesPost')
 const userRoutes = require('./routes/kiddo/userRoutes')
 //const postRoutesKiddo = require('./routes/kiddo/routesPost')
 //const getRouterKiddo = require('./routes/kiddo/routesGet')
 //const putRouterKiddo = require('./routes/kiddo/routesPut')
 
 
-app.use( postRoutes)
+// app.use( postRoutes)
 app.use("/admin/users", userRoutes);
 //app.use('/kiddoPost', postRoutesKiddo)
 //app.use('/kiddoGet',getRouterKiddo )
@@ -31,13 +31,13 @@ const ChallengeRoute = require("./routes/ChallengesRoute/ChallengesRoute")
 app.use("/challenge", ChallengeRoute)
 
 // //exersice
-// const postRoutes = require('./routes/exersice/routesPost')
-// const getRoutes = require('./routes/exersice/routesGet')
-// const deleteRoutes = require('./routes/exersice/routesDelete')
+const postRoutes = require('./routes/exersice/routesPost')
+const getRoutes = require('./routes/exersice/routesGet')
+const deleteRoutes = require('./routes/exersice/routesDelete')
 // const UpdateRoutes = require('./routes/exersice/routesUpdate')
-// app.use( postRoutes)
-// app.use(getRoutes)
-// app.use(deleteRoutes)
+app.use( postRoutes)
+app.use(getRoutes)
+app.use(deleteRoutes)
 // app.use(UpdateRoutes)
 
 const PORT = 8000

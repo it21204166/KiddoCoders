@@ -13,7 +13,7 @@ import BeginnersPage from "./components/Tutorials/Beginners";
 import IntermediatePage from "./components/Tutorials/Intermediate";
 
 // Nethma Imports
-import ChallengePage from "./components/Challenges/Challenge";
+
 import ChallengeRead from "./components/Challenges/ChallengeRead";
 import ChallengeAdd from "./components/Challenges/ChallengeAdd";
 import ChallengeEdit from "./components/Challenges/ChallengeEdit";
@@ -39,7 +39,7 @@ function App() {
         <Route path="/tutorials/intermediate" element={<IntermediatePage />} />
 
         {/* Nethma Routes */}
-        <Route path="/challenge" element={<ChallengePage />} />
+       
         <Route path="/challenge/read" element={<ChallengeRead />} />
         <Route path="/challenge/add" element={<ChallengeAdd />} />
         <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
