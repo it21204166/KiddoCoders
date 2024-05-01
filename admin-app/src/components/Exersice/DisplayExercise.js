@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Exersice extends Component {
+class DisplayExercise extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -25,9 +25,9 @@ class Exersice extends Component {
   }
 
   onDelete = (id) =>{
-    axios.delete(`http://localhost:8000/exercisedelete/delete/${id}`).then((res)=>{
+    axios.delete(`http://localhost:8000/disposeditem/delete/${id}`).then((res)=>{
      
-      this.retrieveExerciseDetails()
+      this.retrieveDisposedDetails()
 
 
     })
@@ -39,9 +39,6 @@ class Exersice extends Component {
 
         return (
             <div className='stock'>
-
-
-        
 
               {/* <div className='App'>
                   <ToastContainer
@@ -70,16 +67,14 @@ class Exersice extends Component {
             
 
               <div>
-              <a href={'/exercisemanagement/exercise/addexercise'} ><button className='btn-success'>Add Exersice</button></a>
-        
+                <a href={`/stock/add-disposed-item`}><button className='btn btn-warning' style={{marginTop:"15px"}}><i class="fa-solid fa-pen-to-square"></i> Add Disposed Item</button></a>
                 <table className='content-table'>
                   <thead className='tData'>
                     <tr>
                       <th scope="col"  style={{borderTopLeftRadius:"10px"}}>C/No</th>
-                      <th scope="col" >Exercise Title</th>
-                      <th scope="col" >Exercise Category</th>
-                      <th scope="col" >About Exercise</th>
-                      <th scope="col" >Exercise(beginners/intermediate)</th>
+                      <th scope="col" >Disposed Item Name</th>
+                      <th scope="col" >Item Category</th>
+                      <th scope="col" >Item Quantity</th>
                       
                       
                       <th scope="col"  style={{border:"none",borderTopRightRadius:"10px"}}>Option</th>
@@ -97,7 +92,7 @@ class Exersice extends Component {
 
                       <div >
                       <td ><a href={`/stock/edit-damaged-item/${results._id}`}><button className="btn btn-warning">Edit</button></a></td>
-                      <td ><button className="btn btn-danger" onClick={()=>this.onDelete(results._id)} >Delete</button></td>
+                      <td ><button className="btn btn-danger"  >Delete</button></td>
                       <td ><a href={`/stock/view-disposed-item/${results._id}`}><button className="btn btn-primary">View</button></a></td>
                       </div>
                     </tr>
@@ -116,4 +111,4 @@ class Exersice extends Component {
     }
 }
 
-export default Exersice;
+export default DisplayExercise;

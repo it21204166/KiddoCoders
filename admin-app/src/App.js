@@ -6,12 +6,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ExersicePage from "./components/Exersice/Exersice";
 import AddExercise from "./components/Exersice/AddExercise";
 import Selflearning from "./components/Exersice/SelfLearning";
+import DisplayExercisePage from "./components/Exersice/DisplayExercise";
 
 // Yoshitha Imports
 import BeginnersPage from "./components/Tutorials/Beginners";
 import IntermediatePage from "./components/Tutorials/Intermediate";
 
 // Nethma Imports
+import ChallengePage from "./components/Challenges/Challenge";
 import ChallengeRead from "./components/Challenges/ChallengeRead";
 import ChallengeAdd from "./components/Challenges/ChallengeAdd";
 import ChallengeEdit from "./components/Challenges/ChallengeEdit";
@@ -22,57 +24,33 @@ import SignUpAdmin from "./components/authadmin/SignUpAdmin";
 import ProfileAdmin from "./components/authadmin/ProfileAdmin";
 
 function App() {
-    return (
-        <Router>
-            <Sidebar />
-            <Routes>
-                {/* Geeshan Routes */}
-                <Route
-                    path="/exercisemanagement/exercise"
-                    element={<ExersicePage />}
-                />
-                <Route
-                    path="/exercisemanagement/exercise/addexercise"
-                    element={<AddExercise />}
-                />
-                <Route
-                    path="/exercisemanagement/selflearning"
-                    element={<Selflearning />}
-                />
+  return (
+    <Router>
+      <Sidebar />
+      <Routes>
+        {/* Geeshan Routes */}
+        <Route path="/exercisemanagement/exercise" element={<ExersicePage />} />
+        <Route path="/exercisemanagement/exercise/addexercise" element={<AddExercise />} />
+        <Route path="/exercisemanagement/selflearning" element={<Selflearning />} />
+        <Route path="/exercise/view" element={<DisplayExercisePage />} />
 
-                {/* Yoshitha Routes */}
-                <Route
-                    path="/tutorials/beginners"
-                    element={<BeginnersPage />}
-                />
-                <Route
-                    path="/tutorials/intermediate"
-                    element={<IntermediatePage />}
-                />
+        {/* Yoshitha Routes */}
+        <Route path="/tutorials/beginners" element={<BeginnersPage />} />
+        <Route path="/tutorials/intermediate" element={<IntermediatePage />} />
 
-<<<<<<< HEAD
-                {/* Nethma Routes */}
-                <Route path="/challenge/read" element={<ChallengeRead />} />
-                <Route path="/challenge/add" element={<ChallengeAdd />} />
-                <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
-            </Routes>
-        </Router>
-    );
-=======
         {/* Nethma Routes */}
         <Route path="/challenge" element={<ChallengePage />} />
+        <Route path="/challenge/read" element={<ChallengeRead />} />
+        <Route path="/challenge/add" element={<ChallengeAdd />} />
+        <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
 
         {/* Dhanuka Routes */}
-        <Route path="/SignInAdmin" element={<SignInAdmin/>} />
-        <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
-        <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
-
-
-
+        <Route path="/SignInAdmin" element={<SignInAdmin />} />
+        <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
+        <Route path="/ProfileAdmin" element={<ProfileAdmin />} />
       </Routes>
     </Router>
   );
->>>>>>> 97fccce6d345e42984080dfd97119b1347f1df38
 }
 
 export default App;

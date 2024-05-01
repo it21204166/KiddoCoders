@@ -28,6 +28,7 @@ class Header extends Component {
         <header>
           <nav className='flexSB'>
             <ul className={click ? "mobile-nav" : "flexSB "} onClick={this.handleLinkClick}>
+            
               <li>
                 <a href='/' onClick={this.handleLinkClick}>Home</a>
               </li>

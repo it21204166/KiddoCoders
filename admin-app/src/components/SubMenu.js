@@ -6,7 +6,7 @@ const SideBarLink = styled(Link)`
     display: flex;
     margin-bottom: 2px;
     color: #e1e9fc;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     padding: 15px;
     list-style: none;
