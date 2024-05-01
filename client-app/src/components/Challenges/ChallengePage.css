@@ -1,0 +1,12 @@
+.challenge-header {
+    min-height: 37vh;
+    background-color: #48bec7;
+}
+
+.challenge-body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 5vw;
+    margin-top: 3vh;
+    padding: 1.5vh 2vw;
+}

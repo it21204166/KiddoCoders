@@ -50,29 +50,18 @@ function App() {
                     element={<IntermediatePage />}
                 />
 
-<<<<<<< HEAD
                 {/* Nethma Routes */}
                 <Route path="/challenge/read" element={<ChallengeRead />} />
                 <Route path="/challenge/add" element={<ChallengeAdd />} />
                 <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
+
+                {/* Dhanuka Routes */}
+                <Route path="/SignInAdmin" element={<SignInAdmin />} />
+                <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
+                <Route path="/ProfileAdmin" element={<ProfileAdmin />} />
             </Routes>
         </Router>
     );
-=======
-        {/* Nethma Routes */}
-        <Route path="/challenge" element={<ChallengePage />} />
-
-        {/* Dhanuka Routes */}
-        <Route path="/SignInAdmin" element={<SignInAdmin/>} />
-        <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
-        <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
-
-
-
-      </Routes>
-    </Router>
-  );
->>>>>>> 97fccce6d345e42984080dfd97119b1347f1df38
 }
 
 export default App;

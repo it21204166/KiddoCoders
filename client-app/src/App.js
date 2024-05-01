@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom"; // Import Route instead of Routes
 import Exersice from "./components/Exersice/Exersice1";
 import CourseHome from "./components/allcourses/CourseHome";
-import Challenges from "./components/Challenges/ChallengePage";
 import Pricing from "./components/pricing/Pricing";
 import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
@@ -15,6 +14,9 @@ import SignIn from "./components/auth/SignIn";
 import ProfileKiddo from "./components/auth/ProfileKiddo";
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
+
+import Challenges from "./components/Challenges/ChallengePage";
+import ChallengeDetailsPage from "./components/Challenges/ChallengeDetailsPage";
 
 class App extends Component {
     // constructor(props) {
@@ -61,6 +63,10 @@ class App extends Component {
 
                     {/* Sandumina */}
                     <Route exact path="/challenge" component={Challenges} />
+                    <Route
+                        exact path="/challenge/details/:id"
+                        component={ChallengeDetailsPage}
+                    />
 
                     {/* <Route exact path='/exersice'>
             {isAuthenticated ? <Exersice /> : <Redirect to='/signup' />}

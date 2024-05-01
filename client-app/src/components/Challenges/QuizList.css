@@ -1,0 +1,30 @@
+.quiz-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.quiz-list-head h3 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.quiz-list-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    gap: 0.2vw;
+}

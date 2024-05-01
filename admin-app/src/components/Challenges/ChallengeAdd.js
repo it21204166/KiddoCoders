@@ -64,7 +64,7 @@ function ChallengeAdd() {
                             type="text"
                             className="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Enter challenege title..."
+                            placeholder="Question Title"
                             value={title}
                             onChange={(e) => {
                                 setTitle(e.target.value);
@@ -78,7 +78,7 @@ function ChallengeAdd() {
                             type="text"
                             className="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Enter description..."
+                            placeholder="Description"
                             value={description}
                             onChange={(e) => {
                                 setDescription(e.target.value);
@@ -92,7 +92,7 @@ function ChallengeAdd() {
                             className="form-control"
                             id="exampleFormControlTextarea1"
                             rows="3"
-                            placeholder="Point 1 | Point 2 | Point 3..."
+                            placeholder="Point 1 | Point 2 | Point 3"
                             value={scorePoints.join("|")}
                             onChange={(e) =>
                                 setScorePoints(e.target.value.split("|"))
