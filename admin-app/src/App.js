@@ -19,6 +19,8 @@ import SignInAdmin from "./components/authadmin/SignInAdmin";
 import SignUpAdmin from "./components/authadmin/SignUpAdmin";
 import ProfileAdmin from "./components/authadmin/ProfileAdmin";
 import AllKiddos from "./components/authadmin/AllKiddos";
+import ContactKiddo from "./components/authadmin/ContactKiddo";
+
 
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
         <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
         <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
         <Route path="/AllKiddos" element={<AllKiddos/>} />
+        <Route path="/ContactKiddo" element={<ContactKiddo/>} />
 
 
 

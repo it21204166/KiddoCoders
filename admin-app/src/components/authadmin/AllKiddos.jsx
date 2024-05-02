@@ -115,7 +115,7 @@ class AllKiddos extends Component {
               <td className='content-table td' title={results.kiddoPhone}>{results.kiddoPhone}</td>
               <td className='content-table td' title={results.kiddoEmail}>{results.kiddoEmail}</td>
               <td classname='content-table td' title={results.kiddoAge}>{results.kiddoAge}</td>
-              <td className='content-table td' style={{padding:"5px",border:"none"}}><button className='btn btn-primary' type='primary'>CONTACT</button></td>
+              <td className='content-table td' style={{padding:"5px",border:"none"}}><a href='/ContactKiddo'><button className='btn btn-primary' type='primary'>CONTACT</button></a></td>
             </tr>
           ))}
           </tbody>
