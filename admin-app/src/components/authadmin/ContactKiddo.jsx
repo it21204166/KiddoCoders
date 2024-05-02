@@ -44,27 +44,27 @@ class sendEmailKiddo extends Component {
     render() {
         return (
             <div>
-            <h2 style={{marginLeft:"20px",marginTop:"65px"}}>Contact Kiddo</h2>
-            <br/>
-            <div id="EmailSupplierrectangle">
+              <center>
+            <h2 style={{marginLeft:"20px",marginTop:"25px"}}>CONTACT KIDDO</h2>
+            </center>
+            <div id="EmailKiddorectangle">
             <br/>
             <center>
             <label>Send an Email</label>
             </center>
             <br/>
             <br/>
+            <input type='text' className='inputkiddoemail' name='sender' value={this.state.sender} readOnly/>
             <br/>
-            <input type='text' className='inputSupplieremail' name='sender' value={this.state.sender} readOnly/>
+            <input type='text' className='inputkiddoemail' name='kiddoreciever' value={this.state.kiddoreciever} onChange={this.handleinput} placeholder='To'/>
             <br/>
-            <input type='text' className='inputSupplieremail' name='kiddoreciever' value={this.state.kiddoreciever} onChange={this.handleinput} placeholder='To'/>
+            <input type='text' className='inputkiddoemail' name='kiddoSubject' value={this.state.kiddoSubject} onChange={this.handleinput} placeholder='Subject'/>
             <br/>
-            <input type='text' className='inputSupplieremail' name='kiddoSubject' value={this.state.kiddoSubject} onChange={this.handleinput} placeholder='Subject'/>
-            <br/>
-            <textarea  rows="15" cols="50" name='kiddomsg' value={this.state.kiddomsg} onChange={this.handleinput} placeholder='Message...' style={{marginLeft:'40px',border: '2px solid #1eb2a6',width:'90%',borderRadius:'10px'}} required></textarea>
+            <textarea  rows="15" cols="50" name='kiddomsg' value={this.state.kiddomsg} onChange={this.handleinput} placeholder=' Message...' style={{marginLeft:'40px',border: '2px solid #1eb2a6',width:'90%',borderRadius:'10px'}} required></textarea>
             <br/>
             <center>
-            <a href='/supplier/AllKiddos'><button  className='btn btn-warning' style={{ marginTop:"20px"}}>BACK</button></a>
-            <a href='/supplier/ContactKiddo'><button  onClick={this.onSubmit} className='btn btn-success' style={{ marginTop:"20px",marginLeft:'20px'}}>SEND</button></a>
+            <a href='/AllKiddos'><button  className='btn btn-warningkiddo' style={{ marginTop:"20px"}}>BACK</button></a>
+            <a href='/ContactKiddo'><button  onClick={this.onSubmit} className='btn btn-successKiddo ' style={{ marginTop:"20px",marginLeft:'20px'}}>SEND</button></a>
             </center>
             <br/>
             </div>

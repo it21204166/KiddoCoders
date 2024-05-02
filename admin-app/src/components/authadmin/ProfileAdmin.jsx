@@ -29,7 +29,7 @@ class ProfileAdmin extends Component {
               <input type='file' className='form-inputSignin' style={{fontFamily:"cursive", height:"50px"}} name='profilePhoto' onChange={this.handlePhotoUpload}/>
               </div>
             <div className='input-container'>
-            <button type='submit' style={{marginLeft:"40%", fontFamily:"cursive", marginRight:"40%", borderRadius:"10px"}} >SAVE</button>
+            <button className="btn btn-successKiddo" type='submit' style={{marginLeft:"40%", fontFamily:"cursive", marginRight:"40%", borderRadius:"10px"}} >SAVE</button>
             </div>
           </form>
         </div>

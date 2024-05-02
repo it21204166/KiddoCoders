@@ -21,7 +21,7 @@ class SignInAdmin extends Component {
               <input type='text' className='form-inputSignin' style={{fontFamily:"cursive"}} name='supName' onChange={this.haddleInputChanges} placeholder='admin Password'/>
             </div>
             <div className='input-container'>
-            <a href='/ProfileAdmin'><button type='button' style={{marginLeft:"35%", fontFamily:"cursive", borderRadius:"10px"}}>LOGIN</button></a>
+            <a href='/ProfileAdmin'><button className='btn btn-successKiddo' type='button' style={{marginLeft:"35%", fontFamily:"cursive", borderRadius:"10px"}}>LOGIN</button></a>
             </div>
             <div className='input-container'>
               <h4 className='primary' style={{fontFamily:"cursive"}}>New Admin <a href='/SignUpAdmin'><button type='button' style={{fontFamily:"cursive", borderRadius:"10px"}}>Register</button></a></h4>

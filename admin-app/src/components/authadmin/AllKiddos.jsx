@@ -89,14 +89,14 @@ class AllKiddos extends Component {
   render() {
     return (
         <div>
-        <h2 className="center-item" style={{fontFamily:"cursive",marginBottom:"35px", marginTop:"30px"}}>Rejistered Kiddos</h2>
+        <h2 className="center-item" style={{marginBottom:"35px", marginTop:"30px"}}>REJISTERED KIDDOS</h2>
 
         <div style={{marginLeft:"500px",width:"50%"}} >
-          <button className='searchSupplier' ><IoIcons.IoSearchOutline  /></button><input className='searchSupplier' value={this.state.searchInput} onChange={this.handlesearchInput} placeholder='Search Details Here'></input>
+          <button className='searchkiddo' ><IoIcons.IoSearchOutline  /></button><input className='searchkiddo' value={this.state.searchInput} onChange={this.handlesearchInput} placeholder='Search Details Here'></input>
           </div>
           <br/>
-        <div className='table-supplier'>
-        <table className='content-tablesupplier' id='kiddoDetailsTable' >
+        <div className='table-kiddo'>
+        <table className='content-tablekiddo' id='kiddoDetailsTable' >
           <thead className='content-table thead tr'>
             <tr className='content-table tbody tr'>
               <th className='content-table th' scope="col"  style={{borderTopLeftRadius:"7px"}}>Kiddo ID</th>
@@ -104,6 +104,7 @@ class AllKiddos extends Component {
               <th className='content-table th' scope="col" >Kiddo Mobile</th>
               <th className='content-table th' scope="col" >Kiddo Email</th>
               <th className='content-table th' scope="col" >Kiddo Age</th>
+              <th className='content-table th' scope="col" >Earn Points</th>
               <th className='content-table th' scope="col" style={{border:"none",borderTopRightRadius:"7px"}}>Options</th>
             </tr>
           </thead>
@@ -115,6 +116,7 @@ class AllKiddos extends Component {
               <td className='content-table td' title={results.kiddoPhone}>{results.kiddoPhone}</td>
               <td className='content-table td' title={results.kiddoEmail}>{results.kiddoEmail}</td>
               <td classname='content-table td' title={results.kiddoAge}>{results.kiddoAge}</td>
+              <td classname='content-table td' title={results.null}>{results.null}</td>
               <td className='content-table td' style={{padding:"5px",border:"none"}}><a href='/ContactKiddo'><button className='btn btn-primary' type='primary'>CONTACT</button></a></td>
             </tr>
           ))}
@@ -124,7 +126,7 @@ class AllKiddos extends Component {
         <br></br>
         <center>
         <button className='btn btn-primary' onClick={this.generatePDF} type='primary'>Download</button>
-        <a href='/'><button type='submit' className='btn btn-warning' style={{ marginLeft:"20px",marginTop:"20px"}}>BACK</button></a>
+        <a href='/'><button type='submit' className='btn btn-warningkiddo' style={{ marginLeft:"20px",marginTop:"20px"}}>BACK</button></a>
         </center>
         <br></br>
       </div>

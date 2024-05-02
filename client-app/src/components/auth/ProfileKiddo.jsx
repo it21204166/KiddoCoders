@@ -115,7 +115,7 @@ function Userprofile() {
       <div className='image-container'>
           <img style={{width:"250px",height:"500px", marginTop:"30px"}} className='register_boy' src='../../register_boy.png'/>
         </div>
-      <div className='form-container' style={{border:'solid', marginRight:"400px", borderRadius:"10px", backgroundColor:"white"}}>
+      <div className='form-container' style={{border:'solid', marginRight:"400px", marginTop:"30px", borderRadius:"10px", backgroundColor:"white"}}>
       <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"30px"}}>My Profile</h1>
       <form onSubmit={formik.handleSubmit}>
       <div className='input-container'>
@@ -179,6 +179,13 @@ function Userprofile() {
           {formik.touched.kiddoAge && formik.errors.kiddoAge && (
             <div className="error-message">{formik.errors.kiddoAge}</div>
           )}
+        </div>
+
+        <div className='input-container'>
+            <label style={{fontFamily:"cursive"}}>Successfully Completed Quises - <input type='text' style={{fontFamily:"cursive", fontSize:"17px", width:"40px", height:"30px", marginLeft:"20px"}} placeholder=' 00'/></label>
+        </div>
+        <div className='input-container'>
+            <label style={{fontFamily:"cursive"}}>Earend Points - <input type='text' style={{fontFamily:"cursive", fontSize:"17px", width:"40px", height:"30px", marginLeft:"20px"}} placeholder=' 00'/></label>
         </div>
 
         {editMode ? (
