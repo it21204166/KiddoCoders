@@ -50,5 +50,12 @@ export const SidebarData = [
       title: "Challenge",
       path: "/challenge",
       icon: <RxLapTimer />
+    },
+
+    {
+      title: "Kiddos",
+      path: "/AllKiddos",
+      icon: <RxLapTimer />
     }
+
 ];

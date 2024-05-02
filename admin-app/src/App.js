@@ -18,6 +18,8 @@ import ChallengePage from "./components/Challenges/Challenge";
 import SignInAdmin from "./components/authadmin/SignInAdmin";
 import SignUpAdmin from "./components/authadmin/SignUpAdmin";
 import ProfileAdmin from "./components/authadmin/ProfileAdmin";
+import AllKiddos from "./components/authadmin/AllKiddos";
+
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
         <Route path="/SignInAdmin" element={<SignInAdmin/>} />
         <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
         <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
+        <Route path="/AllKiddos" element={<AllKiddos/>} />
 
 
 
