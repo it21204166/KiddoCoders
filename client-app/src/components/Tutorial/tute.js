@@ -25,7 +25,7 @@ export default function Exersice1() {
               <p>Dive into the basics with our step by step tutorial designed to introduce newcommers to coding world</p>
             </div>
             <div>
-            <a href='/beginners'><button className='button-start'>Start Now</button></a>
+            <a href='/tutbegs'><button className='button-start'>View</button></a>
             </div>
           </div>
         </div>
@@ -42,28 +42,13 @@ export default function Exersice1() {
               <p>Elavate your understanding with our intermediate-level tutorial, tailored withcoding experience.</p>
             </div>
             <div>
-            <a href='/beginners'><button className='button-start'>Start Now</button></a>
+            <a href='/tutints'><button className='button-start'>View</button></a>
             </div>
           </div>
         </div>
         
-        <div className='container-comp'>
-          <div>
-            <div>
-              <FontAwesomeIcon icon={faBookOpenReader} className='smile-icon' />
-            </div>
-            <div className='title-int'>
-              <h2>Online Compiler</h2>
-
-            </div>
-            <div className='paragraph'>
-              <p>Access our user friendly online compiler, enabling to execute coding</p>
-            </div>
-            <div>
-              <a href='/intermediate'><button className='button-start'>Start Now</button></a>
-            </div>
-          </div>
-        </div>
+        
+          
       </div>
     </div>
   );

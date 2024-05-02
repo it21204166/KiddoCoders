@@ -24,7 +24,7 @@ class Displayfeedback2 extends Component {
       const result = await axios.get("http://localhost:8000/feed/getFeed");
       this.setState({ feedback: result.data.result });
     } catch (error) {
-      console.log(error); 
+     
     }
   };
 

@@ -5,7 +5,7 @@ import HeaderToPage from "../common/header/HeaderToPage";
 import 'jspdf-autotable';
 import jsPDF from 'jspdf';
 
-class Displayquestions extends Component {
+class Displayquestions1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +54,7 @@ class Displayquestions extends Component {
       .then(res => {
         if (res.data.success) {
           this.setState({
-            questions: res.data.searchedDetails
+            question: res.data.searchedDetails
           });
         }
       })
@@ -152,4 +152,4 @@ class Displayquestions extends Component {
   }
 }
 
-export default withRouter(Displayquestions);
+export default withRouter(Displayquestions1);

@@ -24,6 +24,8 @@ import Displayfeedback2 from "./components/feedback/Displayfeedback2";
 import compiler from "./components/Tutorial/compiler";
 import tute from "./components/Tutorial/tute";
 import tutorialhub from "./components/Tutorial/tutorialhub";
+import tutbeg from "./components/Tutorial/tutbeg";
+import tutint from "./components/Tutorial/tutint";
 
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
@@ -68,6 +70,8 @@ class App extends Component {
           <Route exact path='/tutes' component={tute} />
           <Route exact path='/compilers' component={compiler} />
           <Route exact path='/tutorialhubs' component={tutorialhub} />
+          <Route exact path='/tutbegs' component={tutbeg}/>
+          <Route exact path='/tutints' component={tutint}/>
 
           {/* Thisera */}
           <Route exact path='/exersice' component={Exersice} />

@@ -61,7 +61,7 @@ class Addquestions extends Component {
         </div>
         <div className='form-container'>
           <h1 className="center-item" style={{ fontFamily: "cursive", marginBottom: "35px", marginTop: "30px" }}>Any Question? </h1>
-          <form onSubmit={this.onSubmit}> {/* Attach onSubmit handler to form */}
+          <form onSubmit={this.onSubmit}> 
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>First Name</label>
               <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='F_Name' value={F_Name} onChange={this.handleInput} placeholder='First Name' />

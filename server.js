@@ -16,6 +16,12 @@ app.use("/ques", QuesRouter)
 const FeedRouter = require("./routes/tutorial/FeedbackRoute")
 app.use("/feed", FeedRouter)
 
+const TuteRouter = require("./routes/tutorial/TutbegRoute")
+app.use("/tute", TuteRouter)
+
+
+
+
 
 const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)
