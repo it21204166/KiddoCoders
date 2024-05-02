@@ -55,7 +55,7 @@ export const SidebarData = [
     {
       title: "Kiddos",
       path: "/AllKiddos",
-      icon: <RxLapTimer />
+      icon: <IoIcons.IoSearchOutline  />
     }
 
 ];

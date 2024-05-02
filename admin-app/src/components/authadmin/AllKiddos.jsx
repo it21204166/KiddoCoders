@@ -4,6 +4,7 @@ import axios from "axios";
 import 'jspdf-autotable'
 import jsPDF from 'jspdf'
 import "./AuthAdmin.css";
+import * as IoIcons from "react-icons/io5";
 
 
 class AllKiddos extends Component {
@@ -91,7 +92,7 @@ class AllKiddos extends Component {
         <h2 className="center-item" style={{fontFamily:"cursive",marginBottom:"35px", marginTop:"30px"}}>Rejistered Kiddos</h2>
 
         <div style={{marginLeft:"500px",width:"50%"}} >
-          <button className='searchSupplier' ><i class="fa-solid fa-magnifying-glass"></i></button><input className='searchSupplier' value={this.state.searchInput} onChange={this.handlesearchInput} placeholder='Search Details Here'></input>
+          <button className='searchSupplier' ><IoIcons.IoSearchOutline  /></button><input className='searchSupplier' value={this.state.searchInput} onChange={this.handlesearchInput} placeholder='Search Details Here'></input>
           </div>
           <br/>
         <div className='table-supplier'>
