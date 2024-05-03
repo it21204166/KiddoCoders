@@ -28,6 +28,17 @@ const kiddo_schema = new mongoose.Schema({
         required: true
     },
 
+    points: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+
+    earnedPoints: {
+        type: String,
+        required: false,
+    },
+
 }, { timestamps: true });
 
 module.exports = mongoose.model('users', kiddo_schema)

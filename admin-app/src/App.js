@@ -22,6 +22,10 @@ import ChallengeEdit from "./components/Challenges/ChallengeEdit";
 import SignInAdmin from "./components/authadmin/SignInAdmin";
 import SignUpAdmin from "./components/authadmin/SignUpAdmin";
 import ProfileAdmin from "./components/authadmin/ProfileAdmin";
+import AllKiddos from "./components/authadmin/AllKiddos";
+import ContactKiddo from "./components/authadmin/ContactKiddo";
+
+
 
 function App() {
   return (
@@ -43,13 +47,18 @@ function App() {
                 <Route path="/challenge/add" element={<ChallengeAdd />} />
                 <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
 
-                {/* Dhanuka Routes */}
-                <Route path="/SignInAdmin" element={<SignInAdmin />} />
-                <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
-                <Route path="/ProfileAdmin" element={<ProfileAdmin />} />
-            </Routes>
-        </Router>
-    );
+        {/* Dhanuka Routes */}
+        <Route path="/SignInAdmin" element={<SignInAdmin/>} />
+        <Route path="/SignUpAdmin" element={<SignUpAdmin/>} />
+        <Route path="/ProfileAdmin" element={<ProfileAdmin/>} />
+        <Route path="/AllKiddos" element={<AllKiddos/>} />
+        <Route path="/ContactKiddo" element={<ContactKiddo/>} />
+
+
+
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

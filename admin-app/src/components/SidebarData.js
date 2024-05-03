@@ -49,23 +49,15 @@ export const SidebarData = [
         ],
     },
     {
-        title: "Challenges",
-        icon: <RxLapTimer />,
-        iconClosed: <RiArrowDownSFill />,
-        iconOpened: <RiArrowUpSFill />,
-        subNav: [
-            {
-                title: "View Questions",
-                path: "/challenge/read",
-                parent: "Challenges", // Add parent information
-                icon: <IoReaderOutline />,
-            },
-            {
-                title: "Add Questions",
-                path: "/challenge/add",
-                parent: "Challenges", // Add parent information
-                icon: <IoAddCircleOutline />,
-            },
-        ],
+      title: "Challenge",
+      path: "/challenge",
+      icon: <RxLapTimer />
     },
+
+    {
+      title: "Kiddos",
+      path: "/AllKiddos",
+      icon: <IoIcons.IoSearchOutline  />
+    }
+
 ];

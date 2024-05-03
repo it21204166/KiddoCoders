@@ -31,7 +31,17 @@ app.use("/tute2", Tute2Router)
 
 
 const postRoutes = require('./routes/exersice/routesPost')
+const userRoutes = require('./routes/kiddo/userRoutes')
+const getRouterKiddo = require('./routes/kiddo/routesGet')
+const postRouterKiddo = require('./routes/kiddo/routesPost')
+
+
+
+
 app.use( postRoutes)
+app.use("/admin/users", userRoutes);
+app.use('/kiddoGet',getRouterKiddo );
+app.use('/kiddoPost',postRouterKiddo );
 
 // //exersice
 const postRoutes = require('./routes/exersice/routesPost')
