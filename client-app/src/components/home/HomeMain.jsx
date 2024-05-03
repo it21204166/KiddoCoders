@@ -13,9 +13,9 @@ export default class HomeMain extends Component {
         <Hero />
         <AboutCard />
         <HAbout />
-        <Testimonial />
+        {/* <Testimonial />
         <Hblog />
-        <Hprice />
+        <Hprice /> */}
       </>
     );
   }
