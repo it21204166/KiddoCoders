@@ -11,6 +11,25 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
+const QuesRouter = require("./routes/tutorial/QuestionRoute")
+app.use("/ques", QuesRouter)
+
+const FeedRouter = require("./routes/tutorial/FeedbackRoute")
+app.use("/feed", FeedRouter)
+
+const TuteRouter = require("./routes/tutorial/TutbegRoute")
+app.use("/tute", TuteRouter)
+
+const Tute2Router = require("./routes/tutorial/TutintRoute")
+app.use("/tute2", Tute2Router)
+
+
+
+
+
+
+
+
 const postRoutes = require('./routes/exersice/routesPost')
 const userRoutes = require('./routes/kiddo/userRoutes')
 const getRouterKiddo = require('./routes/kiddo/routesGet')
@@ -25,13 +44,13 @@ app.use('/kiddoGet',getRouterKiddo );
 app.use('/kiddoPost',postRouterKiddo );
 
 // //exersice
-// const postRoutes = require('./routes/exersice/routesPost')
-// const getRoutes = require('./routes/exersice/routesGet')
-// const deleteRoutes = require('./routes/exersice/routesDelete')
+const postRoutes = require('./routes/exersice/routesPost')
+const getRoutes = require('./routes/exersice/routesGet')
+const deleteRoutes = require('./routes/exersice/routesDelete')
 // const UpdateRoutes = require('./routes/exersice/routesUpdate')
-// app.use( postRoutes)
-// app.use(getRoutes)
-// app.use(deleteRoutes)
+app.use( postRoutes)
+app.use(getRoutes)
+app.use(deleteRoutes)
 // app.use(UpdateRoutes)
 
 const PORT = 8000

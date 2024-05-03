@@ -28,23 +28,24 @@ class Header extends Component {
         <header>
           <nav className='flexSB'>
             <ul className={click ? "mobile-nav" : "flexSB "} onClick={this.handleLinkClick}>
+            
               <li>
                 <a href='/' onClick={this.handleLinkClick}>Home</a>
               </li>
               <li>
-                <a href='/courses' onClick={this.handleLinkClick}>Tutorials</a>
+                <a href='/tutes' onClick={this.handleLinkClick}>Tutorials</a>
               </li>
               <li>
                 <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>
               </li>
               <li>
-                <a href='/team' onClick={this.handleLinkClick}>Quizes</a>
+                <a href='/challenge' onClick={this.handleLinkClick}>Challenges</a>
               </li>
               <li>
-                <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>
+                <a href='/addfeedbacks' onClick={this.handleLinkClick}>Feedback</a>
               </li>
               <li>
-                <a href='/journal' onClick={this.handleLinkClick}>About Us</a>
+                <a href='/addquestions' onClick={this.handleLinkClick}>Inquiries</a>
               </li>
               <li>
                 <a href='/contact' onClick={this.handleLinkClick}>Contact</a>

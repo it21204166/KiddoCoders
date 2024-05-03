@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./header.css";
 
+
 export default class HeaderToPage extends Component {
     constructor(props) {
         super(props);
@@ -27,16 +28,19 @@ export default class HeaderToPage extends Component {
                     <nav className='flexSB'>
                         <ul className={click ? "mobile-nav" : "flexSB "} onClick={this.handleLinkClick}>
                             <li>
+
+                            </li>
+                            <li>
                                 <a href='/' onClick={this.handleLinkClick}>Home</a>
                             </li>
                             <li>
-                                <a href='/courses' onClick={this.handleLinkClick}>Tutorials</a>
+                                <a href='/tutes' onClick={this.handleLinkClick}>Tutorials</a>
                             </li>
                             <li>
                                 <a href='/exersice' onClick={this.handleLinkClick}>Exercises</a>
                             </li>
                             <li>
-                                <a href='/team' onClick={this.handleLinkClick}>Quizes</a>
+                                <a href='/challenge' onClick={this.handleLinkClick}>Challenges</a>
                             </li>
                             <li>
                                 <a href='/pricing' onClick={this.handleLinkClick}>Feedback</a>

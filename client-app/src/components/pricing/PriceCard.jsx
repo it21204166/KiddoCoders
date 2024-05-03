@@ -13,7 +13,7 @@ class PriceCard extends Component {
               {val.price}
             </h1>
             <p>{val.desc}</p>
-            <button className='outline-btn'>GET STARTED</button>
+            <button className='btn btn-primary'>GET STARTED</button>
           </div>
         ))}
       </>

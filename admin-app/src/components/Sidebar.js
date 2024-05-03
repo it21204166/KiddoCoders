@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
@@ -132,9 +132,11 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
+import { PiUserCircleFill } from "react-icons/pi";
+import { FiArrowUpCircle } from "react-icons/fi";
 
 const Nav = styled.div`
-  background: #1eb2a6;
+  background-color: #1eb2a6;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -152,9 +154,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  margin-top: 8px;
-  margin-left: 2px;
-  background: #0e635d;
+  background-color: #0e635d;
   width: 200px;
   height: 100vh;
   display: flex;
@@ -171,35 +171,49 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
+const UserProfileIcon = styled(PiUserCircleFill)`
+  font-size: 40px;
+  color: white;
+  margin-right: 0rem;
+`;
+
+const ScrollToTopIcon = styled(FiArrowUpCircle)`
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30px;
+  background-color: rgba(30, 178, 166, 0.8);
+  cursor: pointer;
+  border-radius: 20px;
+  &:hover {
+    background-color: #0b524c;
+    cursor: pointer;
+  }
+`;
+
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
-  const location = useLocation();
+  const [scroll, setScroll] = useState(false);
 
-  const getHeaderTitle = () => {
-    const pathSegments = location.pathname.split('/').filter(segment => segment !== '');
-    let title = '';
-    let currentNav = SidebarData;
-  
-    for (let i = 0; i < pathSegments.length; i++) {
-      const segment = pathSegments[i];
-      const foundNavItem = currentNav.find(item => item.title.toLowerCase() === segment.toLowerCase());
-      if (foundNavItem) {
-        title += foundNavItem.title;
-        if (foundNavItem.subNav && i < pathSegments.length - 1) {
-          title += ' -> ';
-          currentNav = foundNavItem.subNav;
-        }
-      } else {
-        // If no matching nav item found, return empty string
-        return '<KIDDO/CODERS>';
-      }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 300) {
+      setScroll(true);
+    } else {
+      setScroll(false);
     }
-    return title;
   };
-  
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const showSidebar = () => setSidebar(!sidebar);
-
+  
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -207,25 +221,27 @@ const Sidebar = () => {
           <NavIcon to="#">
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-          <h1 style={{ textAlign: "left", color: "white" }}>{getHeaderTitle()}</h1>
+          <h1 style={{ textAlign: "center", color: "white" }}>
+            {'<KIDDO/CODERS>'}
+          </h1>
           <NavIcon to="#">
-            
-    //         </NavIcon>
-    //         </Nav>
-    //         <SidebarNav sidebar={sidebar}>
-    //           <SidebarWrap>
-    //             <NavIcon to="#">
-    //               <AiIcons.AiOutlineClose onClick={showSidebar} />
-    //             </NavIcon>
-    //             {SidebarData.map((item, index) => {
-    //               return <SubMenu item={item} key={index} />;
-    //             })}
-    //           </SidebarWrap>
-    //         </SidebarNav>
-    //       </IconContext.Provider>
-    //     </>
-    //   );
-    // };
-    
-    // export default Sidebar;
-    //  */
+            <UserProfileIcon />
+          </NavIcon>
+        </Nav>
+        <SidebarNav sidebar={sidebar}>
+          <SidebarWrap>
+            <NavIcon to="#">
+              <AiIcons.AiOutlineClose onClick={showSidebar} />
+            </NavIcon>
+            {SidebarData.map((item,index) => {
+              return <SubMenu item={item} key={index} />;
+            })}
+          </SidebarWrap>
+        </SidebarNav>
+        {scroll && <ScrollToTopIcon onClick={scrollToTop} />}
+      </IconContext.Provider>
+    </>
+  );
+};
+
+export default Sidebar;
