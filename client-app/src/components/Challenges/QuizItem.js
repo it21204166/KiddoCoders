@@ -6,6 +6,7 @@ function QuizItem({ item, onClick }) {
         <div>
             <div
                 className="card text-center"
+                id="small-box"
                 onClick={onClick}
                 style={{ width: "20vw", height: "20vh", cursor: "pointer" }}
             >
