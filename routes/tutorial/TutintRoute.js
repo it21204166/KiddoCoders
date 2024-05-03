@@ -6,11 +6,11 @@ const router = express.Router()
 // Add tute for intermediates
 router.post("/addTut2", async (req, res) => {
     try {
-        const { Title2, Desc2, Syntax2 } = req.body;
-        const newTute2 = new TutintModel({
-            Title2,
-            Desc2,
-            Syntax2
+        const { Title_i, Desc_i, Syntax_i } = req.body;
+        const newTute2 = new modeltutint({
+            Title_i,
+            Desc_i,
+            Syntax_i
         });
 
         const result = await newTute2.save();
@@ -39,3 +39,5 @@ router.get("/getTut2", async (req, res) => {
         });
     }
 });
+
+module.exports = router;

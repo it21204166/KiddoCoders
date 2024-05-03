@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "./questions.css";
 import HeaderToPage from "../common/header/HeaderToPage";
+import { message } from "antd"; 
+
 
 class Addquestions extends Component {
   constructor(props) {
@@ -22,6 +24,16 @@ class Addquestions extends Component {
     this.setState({
       [name]: value
     });
+  }
+
+  onFinish = async (event) => {
+    event.preventDefault();
+    const { formData } = this.state;
+    const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    if (!emailRegex.test(formData.Q_Email)) {
+      message.error("Please enter a valid email.");
+      return;
+    }
   }
 
   onSubmit(event) {

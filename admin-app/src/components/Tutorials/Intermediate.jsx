@@ -7,9 +7,9 @@ class Intermediate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Title2: "",
-      Desc2: "",
-      Syntax2: "",
+      Title_i: "",
+      Desc_i: "",
+      Syntax_i: "",
       successmsg:"",
       errmsg: ""
     };
@@ -26,21 +26,21 @@ class Intermediate extends Component {
 
   onSubmit(event) {
     event.preventDefault(); 
-    const { Title2, Desc2, Syntax2 } = this.state;
+    const { Title_i, Desc_i, Syntax_i } = this.state;
     const tutint = {
-      Title2: Title2,
-      Desc2: Desc2,
-      Syntax2: Syntax2
+      Title_i: Title_i,
+      Desc_i: Desc_i,
+      Syntax_i: Syntax_i
     };
 
-    axios.post("http://localhost:8000/tute/addTut2", tutint)
+    axios.post("http://localhost:8000/tute2/addTut2", tutint)
       .then((response) => {
         console.log("Success");
         this.setState({ 
           successmsg : "Tute Added Successfully!",
-          Title2: "", 
-          Desc2: "",
-          Syntax2: ""
+          Title_i: "", 
+          Desc_i: "",
+          Syntax_i: ""
         });
       })
       .catch(error => {
@@ -50,7 +50,7 @@ class Intermediate extends Component {
   }
 
   render() {
-    const { Title2, Desc2, Syntax2, successmsg, errmsg } = this.state;
+    const { Title_i, Desc_i, Syntax_i, successmsg, errmsg } = this.state;
     return ( 
       <div>
       <div className='bg11'>
@@ -64,15 +64,15 @@ class Intermediate extends Component {
           <form onSubmit={this.onSubmit}> 
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>Title</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Title2' value={Title2} onChange={this.handleInput} placeholder='Title' />
+              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Title_i' value={Title_i} onChange={this.handleInput} placeholder='Title' />
             </div>
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>Description</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Desc2' value={Desc2} onChange={this.handleInput} placeholder='Description'  />
+              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Desc_i' value={Desc_i} onChange={this.handleInput} placeholder='Description'  />
             </div>
             <div className='input-container'>
               <label className='primary' style={{ fontFamily: "cursive" }}>Syntax</label>
-              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Syntax2' value={Syntax2} onChange={this.handleInput} placeholder='Syntax' />
+              <input type='text' className='form-inputSignin' style={{ fontFamily: "cursive" }} name='Syntax_i' value={Syntax_i} onChange={this.handleInput} placeholder='Syntax' />
             </div>
             <div className='input-container'>
             <button type='submit' style={{ marginLeft: "35%", fontFamily: "cursive", borderRadius: "10px" , backgroundColor: "#1eb2a6", color: "white"}}>Create</button>

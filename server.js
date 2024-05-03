@@ -19,6 +19,12 @@ app.use("/feed", FeedRouter)
 const TuteRouter = require("./routes/tutorial/TutbegRoute")
 app.use("/tute", TuteRouter)
 
+const Tute2Router = require("./routes/tutorial/TutintRoute")
+app.use("/tute2", Tute2Router)
+
+
+
+
 
 
 

@@ -21,7 +21,7 @@ class tutint extends Component {
 
   fetchItem = async () => {
     try {
-      const result = await axios.get("http://localhost:8000/tute/getTut2");
+      const result = await axios.get("http://localhost:8000/tute2/getTut2");
       this.setState({ tutint: result.data.result });
     } catch (error) {
       console.log(error); 
@@ -38,21 +38,21 @@ class tutint extends Component {
 
   // generate PDF
   generatePDF = () => {
-    const { question } = this.state;
+    const { tutint } = this.state;
     const pdf = new jsPDF();
 
     pdf.text("KiddoCodders", 70, 25);
 
     const columns = [
       { title: "Id", dataKey: "id" },
-      { title: "First Name", dataKey: "F_Name" },
-      { title: "Email", dataKey: "Q_Email" },
-      { title: "Question", dataKey: "Q_Question" }
+      { title: "Title", dataKey: "Title_i" },
+      { title: "Description", dataKey: "Desc_i" },
+      { title: "Syntax", dataKey: "Syntax_i" }
     ];
 
     pdf.autoTable({
       head: [columns.map(col => col.title)],
-      body: question.map(item => columns.map(col => item[col.dataKey])),
+      body: tutint.map(item => columns.map(col => item[col.dataKey])),
       startY: 50,
       theme: 'grid'
     });
@@ -60,7 +60,7 @@ class tutint extends Component {
     pdf.setFontSize(16); 
     pdf.setTextColor("#00baa1");
     pdf.text("Tutorial", 55, 35);
-    pdf.save("Begginers tutorial.pdf");
+    pdf.save("Intermediates' tutorial.pdf");
   };
 
   render() {
@@ -89,9 +89,9 @@ class tutint extends Component {
                     return (
                       <tr key={index}>
                         <td>{index + 1}</td>
-                        <td>{item.Title2}</td>
-                        <td>{item.Desc2}</td>
-                        <td>{item.Syntax2}</td>
+                        <td>{item.Title_i}</td>
+                        <td>{item.Desc_i}</td>
+                        <td>{item.Syntax_i}</td>
                         <td>
                           
                         </td>
@@ -100,7 +100,7 @@ class tutint extends Component {
                   })}
                 </tbody>
               </table>
-             <center> <button className='btn btn-primary' onClick={this.generatePDF}>Print</button></center>
+             <center> <button className='btn btn-primary' onClick={this.generatePDF}>Download PDF</button></center>
             </div>
           </div>
         </div>

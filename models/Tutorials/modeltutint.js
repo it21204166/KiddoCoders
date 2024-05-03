@@ -2,17 +2,17 @@ const mongoose = require('mongoose')
 
 const tutint_schema = new mongoose.Schema({
 
-    Title2: {
+    Title_i: {
         type: String,
         required: true
     },
 
-    Desc2: {
+    Desc_i: {
         type: String,
         required: true
     },
    
-    Syntax2: {
+    Syntax_i: {
         type: String,
         required: true
     },
