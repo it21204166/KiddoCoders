@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 
+
 const app = express()
 
 
@@ -33,13 +34,13 @@ const postRoutes = require('./routes/exersice/routesPost')
 app.use( postRoutes)
 
 // //exersice
-// const postRoutes = require('./routes/exersice/routesPost')
-// const getRoutes = require('./routes/exersice/routesGet')
-// const deleteRoutes = require('./routes/exersice/routesDelete')
+const postRoutes = require('./routes/exersice/routesPost')
+const getRoutes = require('./routes/exersice/routesGet')
+const deleteRoutes = require('./routes/exersice/routesDelete')
 // const UpdateRoutes = require('./routes/exersice/routesUpdate')
-// app.use( postRoutes)
-// app.use(getRoutes)
-// app.use(deleteRoutes)
+app.use( postRoutes)
+app.use(getRoutes)
+app.use(deleteRoutes)
 // app.use(UpdateRoutes)
 
 const PORT = 8000

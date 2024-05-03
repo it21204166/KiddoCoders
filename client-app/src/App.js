@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/common/header/Header";
-import { BrowserRouter as Router, Route ,Redirect} from "react-router-dom"; // Import Route instead of Routes
+// import Header from "./components/common/header/Header";
+import { BrowserRouter as Router, Route } from "react-router-dom"; // Import Route instead of Routes
 import Exersice from "./components/Exersice/Exersice1";
 import CourseHome from "./components/allcourses/CourseHome";
-import Team from "./components/team/Team";
 import Pricing from "./components/pricing/Pricing";
 import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
-import Footer from "./components/common/footer/Footer";
+// import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
 import Signup from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
@@ -29,22 +28,29 @@ import tutint from "./components/Tutorial/tutint";
 
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
+import BeginnersExersixePage from "./components/Exersice/Beginners/BeginnersExercise"
+
+import Challenges from "./components/Challenges/ChallengePage";
+import ChallengeDetailsPage from "./components/Challenges/ChallengeDetailsPage";
+import AttempChallenge from "./components/Challenges/AttempChallenge";
+import ChooseChallenge from "./components/Challenges/ChooseChallenge";
+import ChallengeNotification from "./components/Challenges/ChallengeNotification";
 
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     isAuthenticated: false // Initially user is not authenticated
-  //   };
-  // }
+    // constructor(props) {
+    //   super(props);
+    //   this.state = {
+    //     isAuthenticated: false // Initially user is not authenticated
+    //   };
+    // }
 
-  // // Method to handle user authentication
-  // handleAuthentication = () => {
-  //   // Implement your authentication logic here
-  //   // For simplicity, let's assume user is authenticated when this method is called
-  //   this.setState({ isAuthenticated: true });
-  // };
+    // // Method to handle user authentication
+    // handleAuthentication = () => {
+    //   // Implement your authentication logic here
+    //   // For simplicity, let's assume user is authenticated when this method is called
+    //   this.setState({ isAuthenticated: true });
+    // };
 
   render() {
     // const { isAuthenticated } = this.state;
@@ -77,11 +83,22 @@ class App extends Component {
           <Route exact path='/exersice' component={Exersice} />
           <Route exact path='/intermediate' component={IntermediatePage} />
           <Route exact path='/beginners' component={BeginnersPage} />
+          <Route exact path='/beginnersexercise' component={BeginnersExersixePage} />
+
           {/* Tennkoon */}
           
 
+                    {/* Sandumina */}
+                    <Route exact path="/challenge" component={Challenges} />
+                    <Route
+                        exact path="/challenge/details/:id"
+                        component={ChallengeDetailsPage}
+                    />
+                    <Route exact path="/challenge/attemp/:id" component={AttempChallenge}/>
+                    <Route exact path="/challenge/choose/:id" component={ChooseChallenge} />
+                    <Route exact path="/challenge/notification/:id" component={ChallengeNotification} />
 
-          {/* <Route exact path='/exersice'>
+                    {/* <Route exact path='/exersice'>
             {isAuthenticated ? <Exersice /> : <Redirect to='/signup' />}
           </Route>
           <Route exact path='/courses'>
@@ -99,10 +116,10 @@ class App extends Component {
           <Route exact path='/contact'>
             {isAuthenticated ? <Contact /> : <Redirect to='/signup' />}
           </Route> */}
-        </Router>
-      </>
-    );
-  }
+                </Router>
+            </>
+        );
+    }
 }
 
 export default App;

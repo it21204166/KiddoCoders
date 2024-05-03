@@ -10,6 +10,7 @@ export default class YourComponent extends Component {
     this.state = {
       eTitle: "",
       eAbout: "",
+      eUnder: "",
       eCategory: "",
       exercises: [{ eParagrapgh: "", eQuestion: "", eAnswer: "" }]
     };
@@ -43,10 +44,11 @@ export default class YourComponent extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { eTitle, eAbout, eCategory, exercises } = this.state;
+    const { eTitle,eUnder, eAbout, eCategory, exercises } = this.state;
 
     const requestData = {
       eTitle,
+      eUnder,
       eAbout,
       eCategory,
       exercises
@@ -74,6 +76,7 @@ export default class YourComponent extends Component {
   clearInputFields = () => {
     this.setState({
       eTitle: "",
+      eUnder: "",
       eAbout: "",
       eCategory: "",
       exercises: [{ eParagrapgh: "", eQuestion: "", eAnswer: "" }]
@@ -81,7 +84,7 @@ export default class YourComponent extends Component {
   };
 
   render() {
-    const { eTitle, eAbout, eCategory, exercises } = this.state;
+    const { eTitle, eUnder, eAbout, eCategory, exercises } = this.state;
     return (
       <div className='main-container'>
         <div className='container'>
@@ -101,13 +104,49 @@ export default class YourComponent extends Component {
                       </div>
 
                       <div className='input-container'>
+                      <label className='primary' htmlFor="exercise_category">Exercise Category</label><br />
+                        <select className='form-select' name='eCategory' placeholder='Select Category' value={eCategory} onChange={this.handleInputChange}>
+                          <option>Select</option>
+                          <option value="C Syntax">C Syntax</option>
+                          <option value="C Comments">C Comments</option>
+
+                          <option value="C Variables">C Variables</option>
+
+                          <option value="C Data Types">C Data Types</option>
+
+                          <option value="C Constants">C Constants</option>
+
+                          <option value="C Operators">C Operators</option>
+
+                          <option value="C Booleans">C Booleans</option>
+
+                          <option value="C If...Else">C If...Else</option>
+
+                          <option value="C Switch">C Switch</option>
+
+                          <option value="C Loops">C Loops</option>
+
+                          <option value="C Arrays">C Arrays</option>
+
+                          <option value="C Strings">C Strings</option>
+
+                          <option value="C Pointers">C Pointers</option>
+
+                          <option value="C Functions">C Functions</option>
+
+                          <option value="C Structures">C Structures</option>
+                          
+                        </select><br />
+                      </div>
+
+                      <div className='input-container'>
                         <label className='primary'>Exercise About</label><br />
                         <input type='text' className='form-input' name='eAbout' placeholder='Enter About' value={eAbout} onChange={this.handleInputChange}></input><br />
                       </div>
 
                       <div className='input-container'>
-                        <label className='primary' htmlFor="exercise_category">Exercise Category</label><br />
-                        <select className='form-select' name='eCategory' placeholder='Select Category' value={eCategory} onChange={this.handleInputChange}>
+                        <label className='primary' htmlFor="exercise_category">Exercise Under</label><br />
+                        <select className='form-select' name='eUnder' placeholder='Select Category' value={eUnder} onChange={this.handleInputChange}>
                           <option>Select</option>
                           <option value="Beginners">Beginners</option>
                           <option value="Intermediate">Intermediate</option>
@@ -184,8 +223,9 @@ export default class YourComponent extends Component {
               <form className='form-in'>
 
                 <p> {eTitle}</p>
-                <p> {eAbout}</p>
                 <p>{eCategory}</p>
+                <p> {eAbout}</p>
+                <p>{eUnder}</p>
                 {/* Iterate over exercises to display entered details */}
                 {exercises.map((exercise, index) => (
                   <div key={index}>

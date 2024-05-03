@@ -1,13 +1,11 @@
-body {
-    
-}
+
 
 .container-beg{
     background-color: #072724;
     width: 400px;
-    height: 550px;
+    height: 500px;
     margin-top: 5px;
-    margin-left: 200px;
+    margin-left: 150px;
     border: 5px solid #1eb2a6;
     border-radius: 30px;
     display: flex;
@@ -15,34 +13,35 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    
-}
-.container-inter {
-    background-color: #072724;
-    width: 400px;
-    height: 550px;
-    margin-top: 5px;
-    margin-right: 200px;
-    border: 5px solid #1eb2a6;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    margin-right: 100px;
     padding: 10px;
     
 }
 
-.bg{
-    background-color: #1eb2a67c;
-    
+.container-inter {
+    background-color: #072724;
+    width: 400px;
+    height: 500px;
+    margin-top: 5px;
+    margin-right: 150px;
+    border: 5px solid #1eb2a6;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
 }
+
+.bg {
+    background-color: #1eb2a67c;
+}
+
 .main-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 8px;
     background-color: #1eb2a650;
     margin-left: 100px;
@@ -50,7 +49,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     padding-bottom: 5px;
-    
 }
 
 .smile-icon {
@@ -59,38 +57,42 @@ body {
     color: #1eb2a6;
 }
 
-
-.title h2{
+.title h2, .title-int h2 {
     color: white;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 8px;
 }
 
-.title-int h2{
-    color: white;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.paragraph p{
+.paragraph p {
     color: wheat;
     text-align: center;
 }
 
-.button-start{
+.button-start {
     background-color: #1eb2a6;
     color: white;
     border-radius: 50px;
     transition: 0.5s;
 }
 
-.button-start:hover{
+.button-start:hover {
     margin-top: 10px;
     background-color: white;
     color: #1eb2a6;
     border-radius: 50px;
     transition: 0.5s;
+}
 
+/* Media queries for responsiveness */
+@media (max-width: 1300px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 8px 20px 30px;
+    }
+    
+    .container-beg, .container-inter {
+        width: 90%;
+        margin: 5px 0;
+    }
 }
