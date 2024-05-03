@@ -1,0 +1,17 @@
+.choose-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+    padding: 5%;
+}
+
+.choose-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.choose-card {
+    width: 20vw;
+    height: 20vh;
+}

@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom"; // Import Route instead of Routes
 import Exersice from "./components/Exersice/Exersice1";
 import CourseHome from "./components/allcourses/CourseHome";
-import Challenges from "./components/Challenges/ChallengePage";
 import Pricing from "./components/pricing/Pricing";
 import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
@@ -16,6 +15,12 @@ import ProfileKiddo from "./components/auth/ProfileKiddo";
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
 import BeginnersExersixePage from "./components/Exersice/Beginners/BeginnersExercise"
+
+import Challenges from "./components/Challenges/ChallengePage";
+import ChallengeDetailsPage from "./components/Challenges/ChallengeDetailsPage";
+import AttempChallenge from "./components/Challenges/AttempChallenge";
+import ChooseChallenge from "./components/Challenges/ChooseChallenge";
+import ChallengeNotification from "./components/Challenges/ChallengeNotification";
 
 class App extends Component {
     // constructor(props) {
@@ -61,6 +66,13 @@ class App extends Component {
 
                     {/* Sandumina */}
                     <Route exact path="/challenge" component={Challenges} />
+                    <Route
+                        exact path="/challenge/details/:id"
+                        component={ChallengeDetailsPage}
+                    />
+                    <Route exact path="/challenge/attemp/:id" component={AttempChallenge}/>
+                    <Route exact path="/challenge/choose/:id" component={ChooseChallenge} />
+                    <Route exact path="/challenge/notification/:id" component={ChallengeNotification} />
 
                     {/* <Route exact path='/exersice'>
             {isAuthenticated ? <Exersice /> : <Redirect to='/signup' />}

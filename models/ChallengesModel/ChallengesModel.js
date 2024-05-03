@@ -23,6 +23,11 @@ const challengeSchema = new Schema(
             type: Number,
             required: true,
         },
+
+        answer: {
+            type: String,
+            required: true,
+        },
     },
     { timestamps: true }
 );

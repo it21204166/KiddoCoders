@@ -1,0 +1,30 @@
+.user-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.user-list-head {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #48bec7;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.user-list-body {
+    padding: 1vh 1vw;
+    background-color: #d8f5f5;
+    height: 70vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.user-item-container li {
+    margin-bottom: 1vh;
+    background-color: #fff5;
+}

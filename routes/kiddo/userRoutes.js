@@ -1,17 +1,15 @@
 // authRoutes.js
-const express = require('express');
-const User = require('../../models/KiddoModel/KiddoModel')
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const authMiddleware = require('../../routes/kiddo/middleware/authMiddleware')
-const jwt_secret = process.env.jwt_secret || 'KiddoCoders'
-
-
+const express = require("express");
+const User = require("../../models/KiddoModel/KiddoModel");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const authMiddleware = require("../../routes/kiddo/middleware/authMiddleware");
+const jwt_secret = process.env.jwt_secret || "KiddoCoders";
 
 const router = express.Router();
 
 // Register new user
-router.post('/register', async(req, res) => {
+router.post("/register", async (req, res) => {
     try {
         // Check if user already exists
         const user = await User.findOne({ kiddoEmail: req.body.email });
@@ -43,10 +41,8 @@ router.post('/register', async(req, res) => {
     }
 });
 
-
-
 // Login a user
-router.post('/login', async(req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const { kiddoEmail, kiddoPassword } = req.body;
 
@@ -55,17 +51,20 @@ router.post('/login', async(req, res) => {
         if (!user) {
             return res.status(404).send({
                 success: false,
-                message: 'User does not exist',
+                message: "User does not exist",
             });
         }
 
         // Check if password is correct
-        const validPassword = await bcrypt.compare(kiddoPassword, user.kiddoPassword);
+        const validPassword = await bcrypt.compare(
+            kiddoPassword,
+            user.kiddoPassword
+        );
 
         if (!validPassword) {
             return res.status(401).send({
                 success: false,
-                message: 'Invalid password',
+                message: "Invalid password",
             });
         }
 
@@ -76,22 +75,21 @@ router.post('/login', async(req, res) => {
 
         return res.send({
             success: true,
-            message: 'Login successful',
+            message: "Login successful",
             data: token,
         });
     } catch (error) {
-        console.error('Login Error:', error);
+        console.error("Login Error:", error);
         return res.status(500).send({
             success: false,
-            message: 'Internal Server Error',
+            message: "Internal Server Error",
         });
     }
 });
 
 // get logged in user details
-router.get("/get-logged-in-user", async(req, res) => {
-
-    console.log('Database was connected 123', req.body.userIdFromToken)
+router.get("/get-logged-in-user", async (req, res) => {
+    console.log("Database was connected 123", req.body.userIdFromToken);
     try {
         const user = await User.findById(req.body.userIdFromToken);
         if (!user) {
@@ -111,10 +109,10 @@ router.get("/get-logged-in-user", async(req, res) => {
             message: "Hello message",
         });
     }
-
 });
+
 // get user by id
-router.get("/get-user-by-id/:id", async(req, res) => {
+router.get("/get-user-by-id/:id", async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         if (!user) {
@@ -128,18 +126,32 @@ router.get("/get-user-by-id/:id", async(req, res) => {
             message: "User fetched successfully",
             data: user,
         });
-
     } catch (error) {
         return res.send({
             success: false,
-            message: 'User does not exist 321',
+            message: "User does not exist 321",
         });
     }
 });
 
+// Get all users except specific id user's details - Nethma
+router.get("/getRestUsers/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const result = await User.find({ _id: { $ne: id } });
+
+        res.status(200).json({
+            message: "Users are dsiplayed!",
+            result,
+        })
+        
+    } catch (err) {
+        res.status(400).json({ message: err });
+    }
+});
 
 // Update user profile
-router.put('/update-user/:id', async(req, res) => {
+router.put("/update-user/:id", async (req, res) => {
     try {
         const userId = req.params.id; // Use the user ID from the URL params
         const updatedData = req.body; // Data to update
@@ -150,7 +162,7 @@ router.put('/update-user/:id', async(req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                message: 'User does not exist',
+                message: "User does not exist",
             });
         }
 
@@ -160,7 +172,7 @@ router.put('/update-user/:id', async(req, res) => {
 
         return res.json({
             success: true,
-            message: 'User data updated successfully',
+            message: "User data updated successfully",
             data: user,
         });
     } catch (error) {
@@ -171,17 +183,15 @@ router.put('/update-user/:id', async(req, res) => {
     }
 });
 
-
-
 // Delete user by ID
-router.delete('/delete-user/:id', async(req, res) => {
+router.delete("/delete-user/:id", async (req, res) => {
     try {
         const userToDelete = await User.findById(req.params.id);
 
         if (!userToDelete) {
             return res.status(404).json({
                 success: false,
-                message: 'User does not exist',
+                message: "User does not exist",
             });
         }
 
@@ -189,7 +199,7 @@ router.delete('/delete-user/:id', async(req, res) => {
 
         return res.json({
             success: true,
-            message: 'User deleted successfully',
+            message: "User deleted successfully",
         });
     } catch (error) {
         return res.status(500).json({
@@ -199,12 +209,12 @@ router.delete('/delete-user/:id', async(req, res) => {
     }
 });
 
-router.get('/get-all-users', async(req, res) => {
+router.get("/get-all-users", async (req, res) => {
     try {
         const users = await User.find();
         return res.json({
             success: true,
-            message: 'Users retrieved successfully',
+            message: "Users retrieved successfully",
             data: users,
         });
     } catch (error) {
@@ -249,6 +259,5 @@ router.put('/updatePoint/:id', async(req, res) => {
     }
 })
 */
-
 
 module.exports = router;

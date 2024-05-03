@@ -38,19 +38,18 @@ function App() {
         <Route path="/tutorials/beginners" element={<BeginnersPage />} />
         <Route path="/tutorials/intermediate" element={<IntermediatePage />} />
 
-        {/* Nethma Routes */}
-       
-        <Route path="/challenge/read" element={<ChallengeRead />} />
-        <Route path="/challenge/add" element={<ChallengeAdd />} />
-        <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
+                {/* Nethma Routes */}
+                <Route path="/challenge/read" element={<ChallengeRead />} />
+                <Route path="/challenge/add" element={<ChallengeAdd />} />
+                <Route path="/challenge/edit/:id" element={<ChallengeEdit />} />
 
-        {/* Dhanuka Routes */}
-        <Route path="/SignInAdmin" element={<SignInAdmin />} />
-        <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
-        <Route path="/ProfileAdmin" element={<ProfileAdmin />} />
-      </Routes>
-    </Router>
-  );
+                {/* Dhanuka Routes */}
+                <Route path="/SignInAdmin" element={<SignInAdmin />} />
+                <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
+                <Route path="/ProfileAdmin" element={<ProfileAdmin />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
