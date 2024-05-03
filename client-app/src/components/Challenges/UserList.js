@@ -3,7 +3,6 @@ import "./UserList.css";
 import React, { useEffect, useState } from "react";
 import { api } from "../../Config";
 import UserItem from "./UserItem";
-import { IoSearch } from "react-icons/io5";
 
 
 function UserList() {

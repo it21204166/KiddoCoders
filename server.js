@@ -27,8 +27,10 @@ app.use("/admin/users", userRoutes);
 
 // Challenegs Routes
 const ChallengeRoute = require("./routes/ChallengesRoute/ChallengesRoute")
+const SendRoute = require("./routes/ChallengesRoute/SendRoute")
 
 app.use("/challenge", ChallengeRoute)
+app.use("/send", SendRoute)
 
 // //exersice
 // const postRoutes = require('./routes/exersice/routesPost')
