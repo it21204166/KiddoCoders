@@ -41,7 +41,7 @@ router.post('/sendEmailKiddo', (req, res) => {
         from: 'kiddocoders@gmail.com',
         to: kiddoreciever,
         subject: kiddoSubject,
-        text: `${kiddomsg}\n\nThis is a auto generated email and send by Mananger of KiddoCoders Web.Please let me know if you have any questions or concerns. I look forward to hearing back from you soon.\n\nThank you for considering our inquiry.\n\nBest regards,\n\nDhanuka\n\nKiddoCoders\n\nkiddocoders@gmail.com`
+        text: `${kiddomsg}\n\nThis is an auto generated email and send by Mananger of KiddoCoders Web. You have nice Journey with us. Please let me know if you have any questions or concerns. I look forward to hearing back from you soon.\n\nBest regards,\nDhanuka\nKiddoCoders\nkiddocoders@gmail.com`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {

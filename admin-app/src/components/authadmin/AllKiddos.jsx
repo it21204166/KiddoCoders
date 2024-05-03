@@ -90,10 +90,12 @@ class AllKiddos extends Component {
     return (
         <div>
         <h2 className="center-item" style={{marginBottom:"35px", marginTop:"30px"}}>REJISTERED KIDDOS</h2>
-
+        
+        <center>
         <div style={{marginLeft:"500px",width:"50%"}} >
           <button className='searchkiddo' ><IoIcons.IoSearchOutline  /></button><input className='searchkiddo' value={this.state.searchInput} onChange={this.handlesearchInput} placeholder='Search Details Here'></input>
           </div>
+          </center>
           <br/>
         <div className='table-kiddo'>
         <table className='content-tablekiddo' id='kiddoDetailsTable' >
@@ -116,7 +118,7 @@ class AllKiddos extends Component {
               <td className='content-table td' title={results.kiddoPhone}>{results.kiddoPhone}</td>
               <td className='content-table td' title={results.kiddoEmail}>{results.kiddoEmail}</td>
               <td classname='content-table td' title={results.kiddoAge}>{results.kiddoAge}</td>
-              <td classname='content-table td' title={results.null}>{results.null}</td>
+              <td classname='content-table td'> 00 </td>
               <td className='content-table td' style={{padding:"5px",border:"none"}}><a href='/ContactKiddo'><button className='btn btn-primary' type='primary'>CONTACT</button></a></td>
             </tr>
           ))}
