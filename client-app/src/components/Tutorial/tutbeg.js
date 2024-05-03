@@ -10,9 +10,8 @@ class tutbeg extends Component {
     super(props);
     this.state = {
       tutbeg: [],
-      searchInput: "" 
+      currentIndex: 0 
     };
-    this.tableRef = React.createRef(); 
   }
 
   componentDidMount() {
@@ -27,21 +26,28 @@ class tutbeg extends Component {
       console.log(error); 
     }
   };
-  
-  handleFindInput = (e) => {
-    const searchInput = e.target.value;
-    this.setState({ searchInput }, () => {
-      
-      this.search();
-    });
+
+  // Navigate to the next tutorial
+  handleNext = () => {
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex < this.state.tutbeg.length - 1 ? prevState.currentIndex + 1 : prevState.currentIndex
+    }));
   };
 
-  // generate PDF
+  // Navigate to the previous tutorial
+  handlePrev = () => {
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex > 0 ? prevState.currentIndex - 1 : 0
+    }));
+  };
+
   generatePDF = () => {
-    const { tutbeg } = this.state;
+    const { tutbeg, currentIndex } = this.state;
+    const tutorial = tutbeg[currentIndex]; // Only get the current tutorial
     const pdf = new jsPDF();
 
     pdf.text("KiddoCodders", 70, 25);
+    pdf.text("Tutorial For The Beginners", 55, 35);
 
     const columns = [
       { title: "Id", dataKey: "id" },
@@ -50,57 +56,69 @@ class tutbeg extends Component {
       { title: "Syntax", dataKey: "Syntax" }
     ];
 
+    const rows = columns.map(col => tutorial[col.dataKey]); // Adapt to single item
+
     pdf.autoTable({
       head: [columns.map(col => col.title)],
-      body: tutbeg.map(item => columns.map(col => item[col.dataKey])),
+      body: [rows], // Adapt to single item
       startY: 50,
       theme: 'grid'
     });
 
     pdf.setFontSize(16); 
     pdf.setTextColor("#00baa1");
-    pdf.text("Tutorial For The Begginers", 55, 35);
     pdf.save("Begginers tutorial.pdf");
   };
 
   render() {
+    const { tutbeg, currentIndex } = this.state;
+    const tutorial = tutbeg[currentIndex];
+
     return (
       <div>
         <div className='bg11'>
-          <HeaderToPage/>
+          <HeaderToPage />
           <div style={{backgroundColor:"white"}}>
             <h3 style={{ color: "Light blue", marginTop: "25px", marginBottom: "20px" }}><center>Tutorials For Beginners</center></h3>
-
-           
-            <div className="container table-container">
-              <table ref={this.tableRef} className="table table-bordered">
-                <thead className="table-info">
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Syntax</th>
-                   </tr>
-                </thead>
-
-                <tbody>
-                  {this.state.tutbeg.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{item.Title}</td>
-                        <td>{item.Desc}</td>
-                        <td>{item.Syntax}</td>
-                        <td>
-                          
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-             <center> <button className='btn btn-primary' onClick={this.generatePDF}>Download Tutorial</button></center>
+            <div className="but-con">
+            <button className='begbut' onClick={this.handlePrev}>Previous</button>
+            <button className='begbut' onClick={this.handleNext}>Next</button>
             </div>
+            
+            {tutorial && (
+              <div className="container">
+                {/* <table className="table table-bordered">
+                  <thead className="table-info">
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Syntax</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{currentIndex + 1}</td>
+                      <td>{tutorial.Title}</td>
+                      <td>{tutorial.Desc}</td>
+                      <td>{tutorial.Syntax}</td>
+                    </tr>
+                  </tbody>
+                </table> */}
+                <h2>{tutorial.Title}</h2>
+                <hr></hr>
+        
+                <p>{tutorial.Desc}</p>
+                <hr></hr>
+                <div className="con-syntax">
+                <h3>Syntax:</h3>
+                <hr></hr>
+                <br></br>
+                <p>{tutorial.Syntax}</p>
+                </div>
+                <center><button className='btn btn-primary' onClick={this.generatePDF}>Print</button></center>
+              </div>
+            )}
           </div>
         </div>
       </div>

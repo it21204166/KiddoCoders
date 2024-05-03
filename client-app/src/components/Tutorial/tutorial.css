@@ -110,3 +110,36 @@
         margin: 5px 0;
     }
 }
+.con-syntax{
+    border: solid 1px lightskyblue;
+    border-radius: 20px;
+    background-color:  #1eb2a6;;
+    color: white;
+    margin-left: 8px;
+    margin-top: 5px;
+    padding: 10px;
+
+}
+.but-con {
+    display: flex;
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+    height: 100px; /* Adjust height as needed */
+}
+
+.begbut {
+    background-color: #1eb2a6;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    border: none; /* Ensure no border unless hovered */
+    cursor: pointer; /* Indicates it's clickable */
+    padding: 10px 20px; /* Add padding for better visuals */
+    margin: 0 10px; /* Space between buttons */
+}
+
+.begbut:hover {
+    background-color: white;
+    color: #1eb2a6;
+    border: solid 1px #1eb2a6;
+}
