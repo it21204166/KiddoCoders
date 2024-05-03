@@ -28,4 +28,15 @@ router.get("/getMsgs", async (req, res) => {
     }
 });
 
+router.get("/getRecievedMsg/:recieverId", async (req, res) => {
+    try {
+        const recieverId = req.params.recieverId;
+        const data = await SendModel.find({ recieverId });
+        res.json(data);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server Error" });
+    }
+});
+
 module.exports = router;

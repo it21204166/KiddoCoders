@@ -109,9 +109,10 @@ function AttempChallenge() {
                     setText(text)
                     Swal.fire({
                         title: "Submit Successfully!",
-                        text: `Your marks : ${accuracy} ${enteredCode} ${expectedCode} `,
+                        text: `Your marks : ${accuracy}`,
                         icon: "success",
                     });
+                    history.push("/challenge")
                 }
             });
         } catch (err) {

@@ -3,18 +3,40 @@ import "./UserList.css";
 import React, { useEffect, useState } from "react";
 import { api } from "../../Config";
 import UserItem from "./UserItem";
-
+import { useHistory } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 function UserList() {
+    const history = useHistory();
     const [user, setUser] = useState([]);
-    const logUserId = "65fd823969d063e93b68f8f8";
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const token = localStorage.getItem("AuthToken");
+                if (token) {
+                    const jwtToken = jwtDecode(token);
+                    if (jwtToken.userId) {
+                        setUserId(jwtToken.userId);
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    console.log(userId);
 
     // get users from database
     useEffect(() => {
         try {
             const fetchItem = async () => {
                 const result = await axios.get(
-                    `${api}/admin/users/getRestUsers/${logUserId}`
+                    `${api}/admin/users/getRestUsers/${userId}`
                 );
 
                 setUser(result.data.result);
@@ -27,7 +49,8 @@ function UserList() {
     }, []);
 
     const handleChallenge = (clickedItem) => {
-        alert(clickedItem._id);
+        const id = clickedItem._id;
+        history.push(`/challenge/choose/${id}`);
     };
 
     return (
