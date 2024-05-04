@@ -12,7 +12,7 @@ export default class YourComponent extends Component {
       eAbout: "",
       eUnder: "",
       eCategory: "",
-      exercises: [{ eParagrapgh: "", eQuestion: "", eAnswer: "" }]
+      exercises: [{ eParagraph: "", eQuestion: "", eAnswer: "" }]
     };
   }
 
@@ -32,7 +32,7 @@ export default class YourComponent extends Component {
 
   addExercise = () => {
     this.setState(prevState => ({
-      exercises: [...prevState.exercises, { eParagrapgh: "", eQuestion: "", eAnswer: "" }]
+      exercises: [...prevState.exercises, { eParagraph: "", eQuestion: "", eAnswer: "" }]
     }));
   };
 
@@ -79,7 +79,7 @@ export default class YourComponent extends Component {
       eUnder: "",
       eAbout: "",
       eCategory: "",
-      exercises: [{ eParagrapgh: "", eQuestion: "", eAnswer: "" }]
+      exercises: [{ eParagraph: "", eQuestion: "", eAnswer: "" }]
     });
   };
 
@@ -173,9 +173,9 @@ export default class YourComponent extends Component {
                         <textarea
                           type='text'
                           className='form-textarea'
-                          name='eParagrapgh'
+                          name='eParagraph'
                           placeholder='Enter Question Paragrapgh'
-                          value={exercise.eParagrapgh}
+                          value={exercise.eParagraph}
                           onChange={(e) => this.handleExerciseInputChange(e, index)}
                         ></textarea><br />
                         </div>
@@ -202,10 +202,10 @@ export default class YourComponent extends Component {
                       </div>
                     ))}
                     <div className='button-success-1'>
-                      <button className="btn btn-success" type='button' style={{ marginTop: "15px" }} onClick={this.addExercise}>
+                      <button className="btn-btn-success-press" type='button' style={{ marginTop: "15px" }} onClick={this.addExercise}>
                         <i className="fa-regular fa-square-check" style={{ marginRight: "10px" }}></i>Add Another Exercise
                       </button>
-                      <button className="btn btn-success" type='submit' style={{ marginTop: "15px", marginLeft: "10px" }}>
+                      <button className="btn-btn-success-press" type='submit' style={{ marginTop: "15px", marginLeft: "10px" }}>
                         Submit
                       </button>
                     </div>
@@ -222,6 +222,7 @@ export default class YourComponent extends Component {
               </div>
               <form className='form-in'>
 
+                <div className='container-refresh-1'>
                 <p> {eTitle}</p>
                 <p>{eCategory}</p>
                 <p> {eAbout}</p>
@@ -230,11 +231,12 @@ export default class YourComponent extends Component {
                 {exercises.map((exercise, index) => (
                   <div key={index}>
                     <h3>Exercise {index + 1}</h3>
-                    <p>{exercise.eParagrapgh}</p>
+                    <p>{exercise.eParagraph}</p>
                     <p> {exercise.eQuestion}</p>
                     <p>{exercise.eAnswer}</p>
                   </div>
                 ))}
+                </div>
               </form>
             </div>
           </div>

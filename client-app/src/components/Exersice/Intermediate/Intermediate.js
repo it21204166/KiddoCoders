@@ -23,7 +23,7 @@ export default class  extends Component {
                         <div className='ace-container'>
                             <EditorComponent />
                             <div>
-                            {/* <a href='/beginnersexercise'><button className='beg-btn'>Start Exercises</button></a> */}
+                            <a href='/gridpageintermediate'><button className='beg-btn'>Start Exercises</button></a>
                         </div>
                         </div>
                         
