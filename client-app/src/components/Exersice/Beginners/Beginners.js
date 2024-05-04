@@ -24,7 +24,7 @@ export default class Beginners extends Component {
                         <div className='ace-container'>
                             <EditorComponent />
                             <div>
-                            <a href='/beginnersexercise'><button className='beg-btn'>Start Exercises</button></a>
+                            <a href='/gridpage'><button className='beg-btn'>Start Exercises</button></a>
                         </div>
                         </div>
                         

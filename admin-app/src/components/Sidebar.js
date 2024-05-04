@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
@@ -65,57 +65,145 @@ const ScrollToTopIcon = styled(FiArrowUpCircle)`
   }
 `;
 
-const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
-  const [scroll, setScroll] = useState(false);
+class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebar: false,
+      scroll: false,
+      beginnerExercises: [],
+      intermediateExercises: [],
+      error: null
+    };
+  }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
 
-  const handleScroll = () => {
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
     if (window.pageYOffset > 300) {
-      setScroll(true);
+      this.setState({ scroll: true });
     } else {
-      setScroll(false);
+      this.setState({ scroll: false });
     }
   };
 
-  const scrollToTop = () => {
+  scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const showSidebar = () => setSidebar(!sidebar);
+  showSidebar = () => {
+    this.setState(prevState => ({ sidebar: !prevState.sidebar }));
+  };
+
+  componentDidMount() {
+    // Fetch data for beginners category
+    fetch('/exercises/categories')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ beginnerExercises: data.exercisesByCategory });
+      })
+      .catch(error => {
+        console.error('Error fetching beginner exercises:', error);
+        this.setState({ error: 'Error fetching beginner exercises' });
+      });
+
+    // Fetch data for intermediate category
+    fetch('/exercises/categories/intermediate')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ intermediateExercises: data.exercisesByCategory });
+      })
+      .catch(error => {
+        console.error('Error fetching intermediate exercises:', error);
+        this.setState({ error: 'Error fetching intermediate exercises' });
+      });
+
+    // Add event listener for scrolling
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    // Remove event listener when component unmounts
+    window.removeEventListener('scroll', this.handleScroll);
+  }
   
-  return (
-    <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
-          <NavIcon to="#">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </NavIcon>
-          <h1 style={{ textAlign: "center", color: "white" }}>
-            {'<KIDDO/CODERS>'}
-          </h1>
-          <NavIcon to="#">
-            <UserProfileIcon />
-          </NavIcon>
-        </Nav>
-        <SidebarNav sidebar={sidebar}>
-          <SidebarWrap>
+  render() {
+    const { beginnerExercises, intermediateExercises, error } = this.state;
+    return (
+      <>
+        <IconContext.Provider value={{ color: "#fff" }}>
+          <Nav>
             <NavIcon to="#">
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
+              <FaIcons.FaBars onClick={this.showSidebar} />
             </NavIcon>
-            {SidebarData.map((item,index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
-          </SidebarWrap>
-        </SidebarNav>
-        {scroll && <ScrollToTopIcon onClick={scrollToTop} />}
-      </IconContext.Provider>
-    </>
-  );
-};
+            <h1 style={{ textAlign: "center", color: "white" }}>
+              {'<KIDDO/CODERS>'}
+            </h1>
+            <NavIcon to="#">
+              <UserProfileIcon />
+            </NavIcon>
+          </Nav>
+          <SidebarNav sidebar={this.state.sidebar}>
+            <SidebarWrap>
+              <NavIcon to="#">
+                <AiIcons.AiOutlineClose onClick={this.showSidebar} />
+              </NavIcon>
+              {SidebarData.map((item,index) => {
+                return <SubMenu item={item} key={index} />;
+              })}
+            </SidebarWrap>
+          </SidebarNav>
+          {this.state.scroll && <ScrollToTopIcon onClick={this.scrollToTop} />}
+        </IconContext.Provider>
+        <div>
+          <h2>Beginner Exercises</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Exercises</th>
+              </tr>
+            </thead>
+            <tbody>
+              {beginnerExercises.map((category, index) => (
+                <tr key={index}>
+                  <td>{category._id}</td>
+                  <td>{category.exercises.map(exercise => exercise.name).join(', ')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Render intermediate exercises */}
+        <div>
+          <h2>Intermediate Exercises</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Exercises</th>
+              </tr>
+            </thead>
+            <tbody>
+              {intermediateExercises.map((category, index) => (
+                <tr key={index}>
+                  <td>{category._id}</td>
+                  <td>{category.exercises.map(exercise => exercise.name).join(', ')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    );
+  }
+}
 
 export default Sidebar;

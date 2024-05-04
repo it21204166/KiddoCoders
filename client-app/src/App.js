@@ -15,54 +15,62 @@ import SignIn from "./components/auth/SignIn";
 import ProfileKiddo from "./components/auth/ProfileKiddo";
 import IntermediatePage from "./components/Exersice/Intermediate/Intermediate";
 import BeginnersPage from "./components/Exersice/Beginners/Beginners";
-import BeginnersExersixePage from "./components/Exersice/Beginners/BeginnersExercise"
+import BeginnersExersixePage from "./components/Exersice/Beginners/BeginnersExercise";
+import IntermediateExercisePage from "./components/Exersice/Intermediate/IntermediateExercise";
+import ExerciseDisplayPage from "./components/Exersice/Beginners/ExerciseDisplayPage";
+import ExerciseGrid from "./components/Exersice/Beginners/ExerciseGrid";
+import ExerciseGridIntermediate from "./components/Exersice/Intermediate/ExerciseGridIntermediate";
 
 class App extends Component {
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {
-    //     isAuthenticated: false // Initially user is not authenticated
-    //   };
-    // }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     isAuthenticated: false // Initially user is not authenticated
+  //   };
+  // }
 
-    // // Method to handle user authentication
-    // handleAuthentication = () => {
-    //   // Implement your authentication logic here
-    //   // For simplicity, let's assume user is authenticated when this method is called
-    //   this.setState({ isAuthenticated: true });
-    // };
+  // // Method to handle user authentication
+  // handleAuthentication = () => {
+  //   // Implement your authentication logic here
+  //   // For simplicity, let's assume user is authenticated when this method is called
+  //   this.setState({ isAuthenticated: true });
+  // };
 
-    render() {
-        // const { isAuthenticated } = this.state;
-        return (
-            <>
-                <Router>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/SignIn" component={SignIn} />
-                    <Route
-                        exact
-                        path="/ProfileKiddo"
-                        component={ProfileKiddo}
-                    />
-                    <Route exact path="/courses" component={CourseHome} />
-                    <Route exact path="/pricing" component={Pricing} />
-                    <Route exact path="/journal" component={Blog} />
-                    <Route exact path="/contact" component={Contact} />
+  render() {
+    // const { isAuthenticated } = this.state;
+    return (
+      <>
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/SignIn" component={SignIn} />
+          <Route
+            exact
+            path="/ProfileKiddo"
+            component={ProfileKiddo}
+          />
+          <Route exact path="/courses" component={CourseHome} />
+          <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/journal" component={Blog} />
+          <Route exact path="/contact" component={Contact} />
 
           {/* Thisera */}
           <Route exact path='/exersice' component={Exersice} />
           <Route exact path='/intermediate' component={IntermediatePage} />
           <Route exact path='/beginners' component={BeginnersPage} />
           <Route exact path='/beginnersexercise' component={BeginnersExersixePage} />
+          <Route exact path='/intermediatesexercise' component={IntermediateExercisePage} />
+          <Route path="/exercise/selectedEx/:exerciseId" component={ExerciseDisplayPage} />
+          <Route path="/gridpage" component={ExerciseGrid} />
+          <Route path="/gridpageintermediate" component={ExerciseGridIntermediate}/>
 
           {/* Tennkoon */}
-          
 
-                    {/* Sandumina */}
-                    <Route exact path="/challenge" component={Challenges} />
 
-                    {/* <Route exact path='/exersice'>
+          {/* Sandumina */}
+          <Route exact path="/challenge" component={Challenges} />
+
+          {/* <Route exact path='/exersice'>
             {isAuthenticated ? <Exersice /> : <Redirect to='/signup' />}
           </Route>
           <Route exact path='/courses'>
@@ -80,10 +88,10 @@ class App extends Component {
           <Route exact path='/contact'>
             {isAuthenticated ? <Contact /> : <Redirect to='/signup' />}
           </Route> */}
-                </Router>
-            </>
-        );
-    }
+        </Router>
+      </>
+    );
+  }
 }
 
 export default App;

@@ -17,6 +17,9 @@ body {
 
 }
 
+.container-refresh-1{
+  height: 500px;
+}
 
 
 /* Left container */
@@ -154,7 +157,7 @@ body {
 }
 
 .form-select {
-  width: 600px;
+  width: 440px;
   padding: 10px;
   border: 2px solid #1eb2a6;
   /* Green border color */
@@ -223,3 +226,13 @@ label.primary {
   background-color: #fff; /* White background color on focus */
 }
 
+.btn-btn-success-press{
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 25px;
+  padding:10px;
+  font-size: 12px;
+  width: 170px;
+  
+  border: none;
+}

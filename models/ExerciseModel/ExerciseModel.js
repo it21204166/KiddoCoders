@@ -1,5 +1,3 @@
-// Exercise.js
-
 const mongoose = require('mongoose');
 
 const exerciseSchema = new mongoose.Schema({
@@ -22,7 +20,7 @@ const exerciseSchema = new mongoose.Schema({
     required: true
   },
   exercises: [{
-    eParagrapgh: {
+    eParagraph: {
       type: String,
       required: true
     },

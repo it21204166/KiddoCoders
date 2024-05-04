@@ -109,8 +109,7 @@
 }
 
 .right-container {
-  width: 80%;
-  margin-left: 3px;
+  margin-left: 260px;
   /* Add some spacing between left and right containers */
 }
 
@@ -159,7 +158,7 @@
 }
 
 .main-title-beg {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -202,15 +201,14 @@
 }
 
 .sub-topic-beg h3 {
-  
   color: #1a3f4b;
 }
 
 input::file-selector-button {
-    background-color: #1eb2a6;
-    /* Blue */
-    color: #fff;
-    transition: 0.3s;
+  background-color: #1eb2a6;
+  /* Blue */
+  color: #fff;
+  transition: 0.3s;
   background-position-x: 0%;
   background-size: 200%;
   border: 0;
@@ -228,154 +226,531 @@ input::file-selector-button:hover {
   transition: 0.3s;
   background-color: #1a3f4b;
   color: #ffffff;
-  box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
 .scanned-answer {
-    margin-top: 20px;
+  margin-top: 20px;
   background-color: #013532;
   border-radius: 20px;
   color: wheat;
-  box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
-
 .right-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    
-     /* Add margin to separate it from the rest of the content */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  /* Add margin to separate it from the rest of the content */
 }
 
 .scanned-text {
-    margin-bottom: 20px; /* Add margin to separate it from the rest of the content */
+  margin-bottom: 20px; /* Add margin to separate it from the rest of the content */
 }
 
 .scanned-text p {
-    font-weight: bold;
-    margin-left: 30px;
-    margin-bottom: 10px;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-bottom: 10px;
 }
 
 .scanned-text pre {
-    white-space: pre-wrap;
-    margin-left: 30px;
-
+  white-space: pre-wrap;
+  margin-left: 30px;
 }
 
-.btn-success-choose{
-    display: flex;
-    margin-right: 40px;
-
-    
+.btn-success-choose {
+  display: flex;
+  margin-right: 40px;
 }
 
-.scanned-ace{
-    justify-content: center;
-    margin-left: 23%;
-    padding-bottom: 30px;
-    
+.scanned-ace {
+  justify-content: center;
+  margin-left: 23%;
+  padding-bottom: 30px;
 }
 
-.submit-answer-btn{
-    background-color: #1eb2a6;
-    color: white;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin-bottom: 20px;
+.submit-answer-btn {
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-bottom: 20px;
 }
 
-.submit-answer-btn:hover{
-    
-    background-color: white;
-    color: #1eb2a6;
-    border-radius: 50px;
-    transition: 0.5s;
-    box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
+.submit-answer-btn:hover {
+  background-color: white;
+  color: #1eb2a6;
+  border-radius: 50px;
+  transition: 0.5s;
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
-.clear-answer-btn{
-    background-color: #1eb2a6;
-    color: white;
-    border-radius: 5px;
-    transition: 0.5s;
-    margin-bottom: 20px;
-    padding: 6px;
-    
+.clear-answer-btn {
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-bottom: 20px;
+  padding: 6px;
 }
 
-.clear-answer-btn:hover{
-    background-color: white;
-    color: #1eb2a6;
-    border-radius: 5px;
-    transition: 0.5s;
-    box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
+.clear-answer-btn:hover {
+  background-color: white;
+  color: #1eb2a6;
+  border-radius: 5px;
+  transition: 0.5s;
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
-.show-answer-btn{
-    background-color: #1eb2a6;
-    color: white;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin-bottom: 20px;
+.show-answer-btn {
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-bottom: 20px;
 }
 
-.show-answer-btn:hover{
-    
-    background-color: white;
-    color: #1eb2a6;
-    border-radius: 50px;
-    transition: 0.5s;
-    box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
+.show-answer-btn:hover {
+  background-color: white;
+  color: #1eb2a6;
+  border-radius: 50px;
+  transition: 0.5s;
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
-.start-div{
-    background-color: #013532;
-    border-radius: 5px;
-    color: wheat;
-    padding: 20px;
-    margin-top: 10px;
-
+.start-div {
+  background-color: #013532;
+  border-radius: 5px;
+  color: wheat;
+  padding: 20px;
+  margin-top: 10px;
 }
 
-.start-conte{
-    margin-left: 30px;
-    
+.start-conte {
+  margin-left: 30px;
 }
 
-.start-btn-div{
-    background-color: #1eb2a6;
-    color: white;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin-bottom: 20px;
-    padding: 15px;
-    margin-left: 30px;
+.start-btn-div {
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-bottom: 20px;
+  padding: 15px;
+  margin-left: 30px;
 }
 
-.start-btn-div:hover{
-    background-color: white;
-    color: #1eb2a6;
-    border-radius: 50px;
-    transition: 0.5s;
-    box-shadow:0 8px 16px rgba(30, 178, 166, 0.8);
-    
+.start-btn-div:hover {
+  background-color: white;
+  color: #1eb2a6;
+  border-radius: 50px;
+  transition: 0.5s;
+  box-shadow: 0 8px 16px rgba(30, 178, 166, 0.8);
 }
 
-.start-full-dev{
-    margin-top: 30px;
+.start-full-dev {
+  margin-top: 30px;
 }
 
 hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-top: 1px solid #ccc; /* Thin gray line */
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-top: 1px solid #ccc; /* Thin gray line */
+}
+
+.exercise-p {
+  color: #1a3f4b;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
   
-  .exercise-p{
-    color: #1a3f4b;
-  }
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-list li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.category-list li.selected {
+  font-weight: bold;
+}
+
+.container-exercise-beginner {
+  
+  width: 1500px;
+  
+  /* Adjust margin-left to accommodate sidebar width */
+}
+
+.start-full-dev1{
+  margin-left: 280px;
+}
+
+.flex-container{
+  width: 1500px;
+}
+
+.exercise-grid {
+  display: flex;
+  flex-direction: column; /* Display categories in a column */
+  gap: 20px;
+}
+
+.category {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-bottom: 20px; /* Add some bottom margin between categories */
+}
+
+.category.selected {
+  background-color: red; /* Red background for selected category */
+}
+
+.category-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.exercise-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exercise-item {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-exercise-message {
+  margin: 0;
+  color: #777;
+  font-style: italic;
+}
+
+.popup-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray color */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 100px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 5000px;
+  margin: 20px auto;
+}
+
+.popup h2 {
+  margin-bottom: 10px;
+}
+
+.popup ul {
+  padding-left: 20px;
+}
+
+.popup button {
+  margin-top: 10px;
+}
+
+.popup button.selected {
+  background-color: red; /* Red background for selected exercise */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  float: left; /* Ensure the sidebar is floated left */
+}
+
+.category {
+  cursor: pointer;
+}
+
+.category h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.exercise-dropdown {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.exercise-dropdown li {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.exercise-dropdown li:hover {
+  background-color: #ddd;
+}
+
+
+.exercise-details {
+  padding: 20px;
+}
+
+.container-exercise-beginner {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-bg {
+  background-color: #a0faa0;
+}
+
+.flex-container {
+  display: flex;
+  
+  
+}
+
+.right-container {
+  width: 1000px;
+}
+
+.main-title-beg {
+  text-align: center;
+}
+
+.title-beg {
+  margin-bottom: 10px;
+}
+
+
+
+.title-beg-container h2 {
+  margin-top: 0;
+}
+
+.title-beg-container p {
+  margin: 5px 0;
+}
+
+.title-beg-container button {
+  margin-top: 10px;
+}
+
+.title-beg-container img {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.title-beg-container .ace-editor-container {
+  margin-top: 10px;
+}
+
+.title-beg-container .ace-editor-container button {
+  margin-top: 10px;
+}
+
+.container-row {
+  display: inline-flex;
+  justify-content: right;
+  margin-top: 10px;
+  background-color: #a0d6fa;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.input-file {
+  display: none;
+}
+
+.choose-button {
+  margin-bottom: 10px;
+}
+
+.img-prew-scan {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  border: solid 1px black;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+
+.answer-dev {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.answer-dev-topic{
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; 
+}
+
+.answer-dev-hide{
+  display: flex;
+  justify-content: right; /* Center the content horizontally */
+  
+}
+
+.answer-dev-show{
+  display: flex;
+  justify-content: right;
+}
+
+.butn-show{
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+}
+
+.butn-show:hover{
+  background-color: #0e534e;
+  color: white;
+}
+
+.butn{
+  background-color: #1eb2a6;
+  color: white;
+  border-radius: 30px;
+}
+
+.butn:hover{
+  background-color: #0c423f;
+  color: white;
+}
+
+/* Hide the file input */
+.input-file {
+  display: none;
+}
+
+/* Style the container */
+.file-upload-container {
+  
+  display: inline-block;
+}
+
+/* Style the overlay button */
+.choose-button {
+  background-color: #1eb2a6;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.choose-button:hover{
+  background-color: #0b4641;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.choose-button-scan{
+  background-color: #ff0000;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.choose-button-scan:hover{
+  background-color: #a50404;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Position the overlay button */
+.choose-button-overlay {
+  
+}
+
+
+pre input[type="text"] {
+  /* Add your styling for the input fields here */
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  
+  margin-bottom: 6px;
+  width: 60px; /* Adjust the margin as needed */
+}
+
+/* Optional: You can add more specific styling for different input states */
+pre input[type="text"]:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #1eb2a6; /* Change the border color on focus */
+}
+
+/* Add more specific styling for input fields within the pre element if needed */
+
+.bg {
+  max-height: 100vh; /* Set maximum height to viewport height */
+  overflow: hidden; /* Hide overflowing content */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+}
+
+.extracted-ace{
+  margin-right: 15px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.choose-button,
+.choose-button-scan {
+  margin-bottom: 10px;
+}
+
+
