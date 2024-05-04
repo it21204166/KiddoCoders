@@ -20,9 +20,9 @@ function ChallengeRead() {
     }, []);
 
     const handleEdit = (clickedItem) => {
-        const id = clickedItem._id
-        navigate(`/challenge/edit/${id}`)
-    }
+        const id = clickedItem._id;
+        navigate(`/challenge/edit/${id}`);
+    };
 
     const handleDelete = (clickedItem) => {
         try {
@@ -36,7 +36,7 @@ function ChallengeRead() {
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Yes, delete it!",
-            }).then( async (result) => {
+            }).then(async (result) => {
                 if (result.isConfirmed) {
                     Swal.fire({
                         title: "Deleted!",
@@ -44,7 +44,9 @@ function ChallengeRead() {
                         icon: "success",
                     });
 
-                    await axios.delete(`${api}/challenge/deleteChallenge/${id}`);
+                    await axios.delete(
+                        `${api}/challenge/deleteChallenge/${id}`
+                    );
 
                     setChallenge(
                         challenge.filter((item) => {
@@ -75,22 +77,25 @@ function ChallengeRead() {
                 <table className="table align-middle">
                     <thead className="table-primary text-center">
                         <tr>
-                            <th scope="col" style={{ width: "5%" }}>
+                            <th scope="col" style={{ width: "1%" }}>
                                 Id
                             </th>
                             <th scope="col" style={{ width: "10%" }}>
                                 Title
                             </th>
-                            <th scope="col" style={{ width: "35%" }}>
+                            <th scope="col" style={{ width: "30%" }}>
                                 Description
                             </th>
-                            <th scope="col" style={{ width: "30%" }}>
+                            <th scope="col" style={{ width: "28%" }}>
                                 Score Points
                             </th>
-                            <th scope="col" style={{ width: "2%" }}>
+                            <th scope="col" style={{ width: "1%" }}>
                                 Time
                             </th>
-                            <th scope="col" style={{ width: "18%" }}>
+                            <th scope="col" style={{ width: "15%" }}>
+                                Answer
+                            </th>
+                            <th scope="col" style={{ width: "15%" }}>
                                 Action
                             </th>
                         </tr>
@@ -114,14 +119,12 @@ function ChallengeRead() {
                                     </td>
 
                                     <td>{item.timeDuration}</td>
+                                    <td>{item.answer}</td>
                                     <td>
                                         <div className="action-btns">
                                             <button
                                                 className="btn btn-outline-success btn-sm"
-
-                                                onClick={() =>
-                                                    handleEdit(item)
-                                                }
+                                                onClick={() => handleEdit(item)}
                                             >
                                                 Edit
                                             </button>

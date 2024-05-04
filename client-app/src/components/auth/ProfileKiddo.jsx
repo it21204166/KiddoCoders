@@ -111,15 +111,15 @@ function Userprofile() {
       <div style={{backgroundColor:"#1eb2a6"}}>
       <HeaderToPage/>
       </div>
-      <div className='signup' style={{border:'solid'}}>
+      <div className='signup'>
       <div className='image-container'>
-          <img style={{width:"300px",height:"600px"}} className='register_boy' src='../../register_boy.png'/>
+          <img style={{width:"250px",height:"500px", marginTop:"30px"}} className='register_boy' src='../../register_boy.png'/>
         </div>
-      <div className='form-container' style={{border:'solid', marginRight:"100px"}}>
+      <div className='form-container' style={{border:'solid', marginRight:"400px", marginTop:"30px", borderRadius:"10px", backgroundColor:"white"}}>
       <h1 className="center-item" style={{fontFamily:"cursive", marginBottom:"30px"}}>My Profile</h1>
       <form onSubmit={formik.handleSubmit}>
       <div className='input-container'>
-          <label className='primary' style={{fontFamily:"cursive"}}>kiddo Name</label>
+          <label className='primary' style={{fontFamily:"cursive"}}>Kiddo Name</label>
           <input
             type="text"
             id="kiddoName"
@@ -135,7 +135,7 @@ function Userprofile() {
         </div>
 
         <div className='input-container'>
-          <label className='primary' style={{fontFamily:"cursive"}}>kiddo Phone</label>
+          <label className='primary' style={{fontFamily:"cursive"}}>Kiddo Phone</label>
           <input
             type="text"
             id="kiddoPhone"
@@ -165,14 +165,36 @@ function Userprofile() {
             <div className="error-message">{formik.errors.kiddoEmail}</div>
           )}
         </div>
+        <div className='input-container'>
+          <label className='primary' style={{fontFamily:"cursive"}}>Kiddo Age</label>
+          <input
+            type="text"
+            id="kiddoAge"
+            name="kiddoAge"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.kiddoAge}
+            className='form-inputSignin'
+          />
+          {formik.touched.kiddoAge && formik.errors.kiddoAge && (
+            <div className="error-message">{formik.errors.kiddoAge}</div>
+          )}
+        </div>
+
+        <div className='input-container'>
+            <label style={{fontFamily:"cursive"}}>Successfully Completed Quises - <input type='text' style={{fontFamily:"cursive", fontSize:"17px", width:"40px", height:"30px", marginLeft:"20px"}} placeholder=' 00'/></label>
+        </div>
+        <div className='input-container'>
+            <label style={{fontFamily:"cursive"}}>Earend Points - <input type='text' style={{fontFamily:"cursive", fontSize:"17px", width:"40px", height:"30px", marginLeft:"20px"}} placeholder=' 00'/></label>
+        </div>
 
         {editMode ? (
           <div>
-            <button type="submit" className="save-button"> Save Profile </button>
-            <button type="button" onClick={handleDelete}> Delete Profile </button>
+            <button type="submit" style={{fontFamily:"cursive", backgroundColor:"#1eb2a6", color:"white", marginBottom:"30px", marginRight:'40px', borderRadius:"5px"}} className="save-button"> Save Profile </button>
+            <a href="/SignIn"><button type="button" style={{fontFamily:"cursive", backgroundColor:"#1eb2a6", color:"white", marginBottom:"30px", borderRadius:"5px"}} onClick={handleDelete}> Delete Profile </button></a>
           </div>
         ) : (
-          <button type="button" onClick={() => setEditMode(true)}> Edit Profile</button>
+          <button type="button" style={{fontFamily:"cursive", backgroundColor:"#1eb2a6", color:"white", marginBottom:"30px", borderRadius:"5px"}} onClick={() => setEditMode(true)}> Edit Profile</button>
         )}
       </form>
       </div>

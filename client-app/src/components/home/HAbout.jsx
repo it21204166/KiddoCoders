@@ -79,7 +79,7 @@ class HAbout extends Component {
                                                 {val.priceAll} / {val.pricePer}
                                             </h3>
                                         </div>
-                                        <button className="outline-btn">
+                                        <button className="btn btn-primary">
                                             ENROLL NOW !
                                         </button>
                                     </div>

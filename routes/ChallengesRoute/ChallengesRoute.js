@@ -5,12 +5,13 @@ const router = express.Router();
 // Add new challenege
 router.post("/addChallenge", async (req, res) => {
     try {
-        const { title, description, scorePoints, timeDuration } = req.body;
+        const { title, description, scorePoints, timeDuration, answer } = req.body;
         const newChallenge = new ChallengeModel({
             title,
             description,
             scorePoints,
             timeDuration,
+            answer
         });
 
         const result = await newChallenge.save();
@@ -57,12 +58,13 @@ router.get("/getChallenge/:id", async (req, res) => {
 router.put("/editChallenge/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        const { title, description, scorePoints, timeDuration } = req.body;
+        const { title, description, scorePoints, timeDuration, answer } = req.body;
         const updatedChallenge = {
             title,
             description,
             scorePoints,
             timeDuration,
+            answer
         };
 
         await ChallengeModel.findByIdAndUpdate(id, updatedChallenge);

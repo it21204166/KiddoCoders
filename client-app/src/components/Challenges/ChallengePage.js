@@ -1,11 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import "./ChallengePage.css";
+import Header from "../common/header/Header";
+import QuizList from "./QuizList";
+import UserList from "./UserList";
+import { IoMdNotifications } from "react-icons/io";
+import { useHistory } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 function ChallengePage() {
-  return (
-    <div>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse optio magni obcaecati magnam commodi rerum accusamus pariatur neque hic iusto eos aliquid atque voluptas, nesciunt at iste. Quaerat non, quam corrupti, vel, esse necessitatibus quia eaque sapiente aspernatur excepturi quos. Eius eos officiis, odio inventore adipisci expedita ab eum labore magnam at unde porro, praesentium nisi voluptate, sequi quas explicabo incidunt? Sapiente in blanditiis obcaecati natus tenetur voluptate, minima excepturi est omnis aliquid, non odit consequatur officia amet ullam beatae at voluptatem, ipsam nulla nam magnam tempore. Quam, nulla? Obcaecati qui possimus minima velit nisi perspiciatis consequuntur temporibus blanditiis laudantium!</p>
-    </div>
-  )
+    const history = useHistory();
+    const [userId, setUserId] = useState(null);
+
+    //Get logged user
+    useEffect(() => {
+        let userId = null;
+        const token = localStorage.getItem("AuthToken");
+        const jwtToken = jwtDecode(token); // Fix usage of jwtDecode
+
+        console.log("tokentokentokentoken", jwtToken);
+
+        if (jwtToken.userId) {
+            userId = jwtToken.userId;
+            setUserId(userId);
+        }
+    }, []);
+
+    const handleNotification = () => {
+        history.push(`/challenge/notification/${userId}`);
+    };
+
+    return (
+        <div>
+            <div className="challenge-header">
+                <Header />
+            </div>
+            <IoMdNotifications
+                onClick={handleNotification}
+                style={{
+                    fontSize: "30px",
+                    color: "#48bec7",
+                    float: "right",
+                    marginTop: "3vh",
+                    marginRight: "1vw",
+                    cursor: "pointer",
+                }}
+            />
+            <div className="challenge-body">
+                <QuizList />
+                <UserList />
+            </div>
+        </div>
+    );
 }
 
-export default ChallengePage
+export default ChallengePage;

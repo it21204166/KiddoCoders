@@ -11,24 +11,37 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-// const postRoutes = require('./routes/exersice/routesPost')
+const QuesRouter = require("./routes/tutorial/QuestionRoute")
+app.use("/ques", QuesRouter)
+
+const FeedRouter = require("./routes/tutorial/FeedbackRoute")
+app.use("/feed", FeedRouter)
+
+const TuteRouter = require("./routes/tutorial/TutbegRoute")
+app.use("/tute", TuteRouter)
+
+const Tute2Router = require("./routes/tutorial/TutintRoute")
+app.use("/tute2", Tute2Router)
+
+
+
+
+
+
+
+
+const postRoutes = require('./routes/exersice/routesPost')
 const userRoutes = require('./routes/kiddo/userRoutes')
-//const postRoutesKiddo = require('./routes/kiddo/routesPost')
-//const getRouterKiddo = require('./routes/kiddo/routesGet')
-//const putRouterKiddo = require('./routes/kiddo/routesPut')
+const getRouterKiddo = require('./routes/kiddo/routesGet')
+const postRouterKiddo = require('./routes/kiddo/routesPost')
 
 
-// app.use( postRoutes)
+
+
+app.use( postRoutes)
 app.use("/admin/users", userRoutes);
-//app.use('/kiddoPost', postRoutesKiddo)
-//app.use('/kiddoGet',getRouterKiddo )
-//app.use('/kiddoPut',putRouterKiddo)
-
-
-// Challenegs Routes
-const ChallengeRoute = require("./routes/ChallengesRoute/ChallengesRoute")
-
-app.use("/challenge", ChallengeRoute)
+app.use('/kiddoGet',getRouterKiddo );
+app.use('/kiddoPost',postRouterKiddo );
 
 // //exersice
 const postRoutes = require('./routes/exersice/routesPost')

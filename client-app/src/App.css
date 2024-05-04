@@ -52,7 +52,7 @@ li {
 .row {
   width: 50%;
 }
-button {
+/* button {
   padding: 17px 30px;
   background-color: #fff;
   color: #1eb2a6;
@@ -73,7 +73,7 @@ button:hover {
 .primary-btn {
   background-color: #1eb2a6;
   color: #fff;
-}
+} */
 
 /*------------global-----------*/
 #heading {
